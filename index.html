@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="AI Government Welfare Eligibility Checker">
+
+    <meta
+        name="theme-color"
+        content="#2563eb">
+
+    <title>
+        AI Welfare | Government Welfare Eligibility Checker
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+
+    <!-- =====================================================
+         NAVBAR + EXTRA STYLE
+    ====================================================== -->
+
+    <style>
+
+        /* ================================
+           NAVBAR
+        ================================= */
+
+        .navbar {
+            z-index: 9999;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .navbar-brand i {
+            color: #ffd43b;
+        }
+
+        .navbar-nav {
+            gap: 5px;
+        }
+
+        .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link i {
+            font-size: 15px;
+        }
+
+
+        /* ================================
+           ADMIN LINK
+        ================================= */
+
+        .admin-link {
+            color: #ffd43b !important;
+            font-weight: 600 !important;
+        }
+
+        .admin-link i {
+            color: #ffd43b !important;
+        }
+
+        .admin-link:hover,
+        .admin-link:hover i {
+            color: #ffffff !important;
+        }
+
+
+        /* ================================
+           DASHBOARD LINK
+        ================================= */
+
+        .dashboard-link {
+            color: #93c5fd !important;
+            font-weight: 600 !important;
+        }
+
+        .dashboard-link i {
+            color: #93c5fd !important;
+        }
+
+        .dashboard-link:hover,
+        .dashboard-link:hover i {
+            color: #ffffff !important;
+        }
+
+
+        /* ================================
+           VOICE ASSISTANT LINK
+        ================================= */
+
+        .voice-link i {
+            color: #60a5fa;
+        }
+
+
+        /* ================================
+           EXPLORE SCHEMES ICON
+        ================================= */
+
+        .explore-icon {
+            color: #ef4444 !important;
+        }
+
+
+        /* ================================
+           FLOATING VOICE ASSISTANT
+        ================================= */
+
+        .floating-voice-assistant {
+
+            position: fixed;
+
+            right: 35px;
+            bottom: 25px;
+
+            z-index: 10000;
+
+            display: flex;
+            align-items: center;
+
+            gap: 14px;
+
+            min-width: 365px;
+
+            padding: 15px 18px;
+
+            background: #ffffff;
+
+            border: 1px solid #dbe5f5;
+
+            border-radius: 23px;
+
+            box-shadow:
+                0 15px 45px
+                rgba(37, 99, 235, 0.22);
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .floating-voice-assistant:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 20px 55px
+                rgba(37, 99, 235, 0.30);
+        }
+
+
+        .floating-ai-logo {
+
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #4338ca
+                );
+
+            color: #ffffff;
+
+            font-size: 22px;
+        }
+
+
+        .floating-voice-content {
+
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 2px;
+        }
+
+
+        .floating-voice-content strong {
+
+            color: #172033;
+
+            font-size: 17px;
+
+            font-weight: 700;
+        }
+
+
+        .floating-voice-content span {
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+
+        .floating-mic-button {
+
+            width: 60px;
+            height: 60px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #4338ca
+                );
+
+            color: #ffffff;
+
+            font-size: 23px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px
+                rgba(37, 99, 235, 0.30);
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .floating-mic-button:hover {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 768px) {
+
+            .floating-voice-assistant {
+
+                right: 15px;
+                bottom: 15px;
+
+                width:
+                    calc(100% - 30px);
+
+                min-width: 0;
+
+                padding: 12px;
+
+                border-radius: 20px;
+            }
+
+
+            .floating-ai-logo {
+
+                width: 52px;
+                height: 52px;
+
+                font-size: 22px;
+            }
+
+
+            .floating-mic-button {
+
+                width: 52px;
+                height: 52px;
+
+                font-size: 20px;
+            }
+
+
+            .floating-voice-content strong {
+                font-size: 14px;
+            }
+
+
+            .floating-voice-content span {
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+    <div class="container">
+
+
+        <!-- ============================
+             LOGO
+        ============================= -->
+
+      
+        <!-- ============================
+             MOBILE MENU BUTTON
+        ============================= -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- ============================
+             NAVIGATION
+        ============================= -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="mainNavbar">
+
+            <ul
+                class="navbar-nav ms-auto align-items-lg-center">
+
+
+                <!-- HOME -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="index.html">
+
+                        <i
+                            class="bi bi-house-fill">
+                        </i>
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <!-- SCHEMES -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="schemes.html">
+
+                        <i
+                            class="bi bi-grid-fill">
+                        </i>
+
+                        Schemes
+
+                    </a>
+
+                </li>
+
+
+                <!-- VOICE ASSISTANT -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link voice-link"
+                        href="voice-assistant.html">
+
+                        <i
+                            class="bi bi-mic-fill">
+                        </i>
+
+                        Voice Assistant
+
+                    </a>
+
+                </li>
+
+
+                <!-- DASHBOARD -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link dashboard-link"
+                        href="dashboard.html">
+
+                        <i
+                            class="bi bi-speedometer2">
+                        </i>
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+
+                <!-- ADMIN -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link admin-link"
+                        href="admin.html">
+
+                        <i
+                            class="bi bi-shield-lock-fill">
+                        </i>
+
+                        Admin
+
+                    </a>
+
+                </li>
+
+
+                <!-- ABOUT -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="about.html">
+
+                        <i
+                            class="bi bi-info-circle-fill">
+                        </i>
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <!-- CONTACT -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="contact.html">
+
+                        <i
+                            class="bi bi-telephone-fill">
+                        </i>
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+                <!-- LOGIN -->
+
+                <li
+                    class="nav-item ms-lg-2">
+
+                    <a
+                        href="login.html"
+                        class="login-btn text-decoration-none">
+
+                        <i
+                            class="bi bi-box-arrow-in-right">
+                        </i>
+
+                        Login
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO SECTION
+====================================================== -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+
+            <!-- LEFT -->
+
+            <div
+                class="col-lg-6 hero-content">
+
+
+                <span class="hero-badge">
+
+                    <i
+                        class="bi bi-stars me-1">
+                    </i>
+
+                    AI Powered Government Portal
+
+                </span>
+
+
+                <h1>
+
+                    AI Government Welfare
+                    Eligibility Checker
+
+                </h1>
+
+
+                <p>
+
+                    Find government welfare schemes
+                    that may be relevant to your profile
+                    using an intelligent, simple and
+                    user-friendly platform.
+
+                </p>
+
+
+                <!-- FEATURES -->
+
+                <ul class="hero-list">
+
+                    <li>
+
+                        <i
+                            class="bi bi-check-circle-fill">
+                        </i>
+
+                        AI-Assisted Recommendations
+
+                    </li>
+
+
+                    <li>
+
+                        <i
+                            class="bi bi-check-circle-fill">
+                        </i>
+
+                        500+ Welfare Scheme Information
+
+                    </li>
+
+
+                    <li>
+
+                        <i
+                            class="bi bi-check-circle-fill">
+                        </i>
+
+                        Secure &amp; Simple User Experience
+
+                    </li>
+
+                </ul>
+
+
+                <!-- BUTTONS -->
+
+                <div class="hero-buttons">
+
+
+                    <!-- CHECK ELIGIBILITY -->
+
+                    <a
+                        href="eligibility.html"
+                        class="btn btn-warning btn-lg">
+
+                        <i
+                            class="bi bi-stars me-2">
+                        </i>
+
+                        Check Eligibility
+
+                    </a>
+
+
+                    <!-- EXPLORE SCHEMES -->
+
+                    <a
+                        href="schemes.html"
+                        class="btn btn-light btn-lg">
+
+                        <i
+                            class="bi bi-grid-fill me-2 explore-icon">
+                        </i>
+
+                        Explore Schemes
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div
+                class="col-lg-6 text-center">
+
+                <img
+                    src="images/robot.svg"
+                    class="hero-image img-fluid"
+                    alt="AI Welfare Assistant">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PLATFORM FEATURES
+====================================================== -->
+
+<section class="features">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span
+                style="
+                    color:#2563eb;
+                    font-size:12px;
+                    font-weight:700;
+                    letter-spacing:1px;
+                ">
+
+                PLATFORM FEATURES
+
+            </span>
+
+
+            <h2>
+
+                Why Choose AI Welfare?
+
+            </h2>
+
+
+            <p>
+
+                AI Welfare makes government welfare
+                scheme discovery simple through a
+                clean digital platform.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- CARD 1 -->
+
+            <div
+                class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <div class="icon">
+
+                        <i
+                            class="bi bi-robot">
+                        </i>
+
+                    </div>
+
+
+                    <h4>
+
+                        AI Recommendation
+
+                    </h4>
+
+
+                    <p>
+
+                        Identify potentially relevant
+                        welfare schemes based on user
+                        information.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div
+                class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <div class="icon">
+
+                        <i
+                            class="bi bi-shield-check">
+                        </i>
+
+                    </div>
+
+
+                    <h4>
+
+                        Secure Experience
+
+                    </h4>
+
+
+                    <p>
+
+                        Simple interface designed with
+                        privacy and responsible data
+                        handling in mind.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div
+                class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <div class="icon">
+
+                        <i
+                            class="bi bi-graph-up-arrow">
+                        </i>
+
+                    </div>
+
+
+                    <h4>
+
+                        Smart Analysis
+
+                    </h4>
+
+
+                    <p>
+
+                        Evaluate user information against
+                        welfare scheme eligibility rules.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+
+            <div
+                class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <div class="icon">
+
+                        <i
+                            class="bi bi-lightning-charge">
+                        </i>
+
+                    </div>
+
+
+                    <h4>
+
+                        Fast Processing
+
+                    </h4>
+
+
+                    <p>
+
+                        Quickly access welfare information
+                        through a modern interface.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+====================================================== -->
+
+<section
+    style="
+        padding:90px 0;
+        background:#ffffff;
+    ">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span
+                style="
+                    color:#2563eb;
+                    font-size:12px;
+                    font-weight:700;
+                    letter-spacing:1px;
+                ">
+
+                HOW IT WORKS
+
+            </span>
+
+
+            <h2>
+
+                Find Welfare Schemes in 3 Steps
+
+            </h2>
+
+
+            <p>
+
+                Enter your information, analyse your
+                requirements and view potentially
+                relevant welfare schemes.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- STEP 1 -->
+
+            <div class="col-lg-4">
+
+                <div
+                    class="feature-card">
+
+                    <div class="icon">
+
+                        <i
+                            class="bi bi-person-lines-fill">
+                        </i>
+
+                    </div>
+
+
+                    <h4>
+
+                        01. Enter Your Details
+
+                    </h4>
+
+
+                    <p>
+
+                        Provide basic information such
+                        as age, income, occupation and
+                        state.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div class="col-lg-4">
+
+                <div
+                    class="feature-card">
+
+                    <div class="icon">
+
+                        <i
+                            class="bi bi-cpu">
+                        </i>
+
+                    </div>
+
+
+                    <h4>
+
+                        02. AI Analysis
+
+                    </h4>
+
+
+                    <p>
+
+                        Compare user information with
+                        available welfare scheme criteria.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div class="col-lg-4">
+
+                <div
+                    class="feature-card">
+
+                    <div class="icon">
+
+                        <i
+                            class="bi bi-check2-circle">
+                        </i>
+
+                    </div>
+
+
+                    <h4>
+
+                        03. View Results
+
+                    </h4>
+
+
+                    <p>
+
+                        View potentially relevant schemes
+                        and eligibility information.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STATISTICS
+====================================================== -->
+
+<section
+    style="
+        padding:70px 0;
+        background:
+            linear-gradient(
+                135deg,
+                #0f172a,
+                #1d4ed8
+            );
+        color:white;
+    ">
+
+    <div class="container">
+
+        <div class="row g-4 text-center">
+
+
+            <!-- USERS -->
+
+            <div class="col-6 col-lg-3">
+
+                <i
+                    class="bi bi-people-fill"
+                    style="
+                        color:#ffd43b;
+                        font-size:30px;
+                    ">
+                </i>
+
+                <h3
+                    style="
+                        font-size:32px;
+                        font-weight:700;
+                        margin-top:10px;
+                    ">
+
+                    12,540
+
+                </h3>
+
+                <p
+                    style="
+                        color:#bfdbfe;
+                        font-size:12px;
+                    ">
+
+                    Total Users
+
+                </p>
+
+            </div>
+
+
+            <!-- SCHEMES -->
+
+            <div class="col-6 col-lg-3">
+
+                <i
+                    class="bi bi-grid-3x3-gap"
+                    style="
+                        color:#ffd43b;
+                        font-size:30px;
+                    ">
+                </i>
+
+                <h3
+                    style="
+                        font-size:32px;
+                        font-weight:700;
+                        margin-top:10px;
+                    ">
+
+                    524
+
+                </h3>
+
+                <p
+                    style="
+                        color:#bfdbfe;
+                        font-size:12px;
+                    ">
+
+                    Schemes
+
+                </p>
+
+            </div>
+
+
+            <!-- VOICE -->
+
+            <div class="col-6 col-lg-3">
+
+                <i
+                    class="bi bi-mic-fill"
+                    style="
+                        color:#ffd43b;
+                        font-size:30px;
+                    ">
+                </i>
+
+                <h3
+                    style="
+                        font-size:32px;
+                        font-weight:700;
+                        margin-top:10px;
+                    ">
+
+                    8,920
+
+                </h3>
+
+                <p
+                    style="
+                        color:#bfdbfe;
+                        font-size:12px;
+                    ">
+
+                    Voice Queries
+
+                </p>
+
+            </div>
+
+
+            <!-- APPLICATIONS -->
+
+            <div class="col-6 col-lg-3">
+
+                <i
+                    class="bi bi-file-earmark-check-fill"
+                    style="
+                        color:#ffd43b;
+                        font-size:30px;
+                    ">
+                </i>
+
+                <h3
+                    style="
+                        font-size:32px;
+                        font-weight:700;
+                        margin-top:10px;
+                    ">
+
+                    2,340
+
+                </h3>
+
+                <p
+                    style="
+                        color:#bfdbfe;
+                        font-size:12px;
+                    ">
+
+                    Applications
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section
+    style="
+        padding:90px 15px;
+        background:#f8fafc;
+        text-align:center;
+    ">
+
+    <div class="container">
+
+
+        <span
+            style="
+                color:#2563eb;
+                font-size:12px;
+                font-weight:700;
+                letter-spacing:1px;
+            ">
+
+            GET STARTED
+
+        </span>
+
+
+        <h2
+            style="
+                color:#0f172a;
+                font-size:40px;
+                font-weight:700;
+                margin:10px 0 15px;
+            ">
+
+            Discover Welfare Opportunities
+
+        </h2>
+
+
+        <p
+            style="
+                max-width:680px;
+                margin:0 auto 28px;
+                color:#64748b;
+                font-size:14px;
+                line-height:1.8;
+            ">
+
+            Start your eligibility assessment,
+            explore welfare schemes or ask our
+            AI Voice Assistant.
+
+        </p>
+
+
+        <div
+            class="d-flex justify-content-center flex-wrap gap-3">
+
+
+            <a
+                href="eligibility.html"
+                class="btn btn-primary btn-lg">
+
+                <i
+                    class="bi bi-stars me-2">
+                </i>
+
+                Check Eligibility
+
+            </a>
+
+
+            <a
+                href="schemes.html"
+                class="btn btn-outline-primary btn-lg">
+
+                <i
+                    class="bi bi-grid-fill me-2">
+                </i>
+
+                Explore Schemes
+
+            </a>
+
+
+            <a
+                href="voice-assistant.html"
+                class="btn btn-primary btn-lg">
+
+                <i
+                    class="bi bi-mic-fill me-2">
+                </i>
+
+                AI Voice Assistant
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer
+    style="
+        background:#0f172a;
+        color:#94a3b8;
+        padding:35px 15px;
+    ">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <!-- BRAND -->
+
+            <div class="col-lg-4">
+
+                <h4
+                    style="
+                        color:white;
+                        font-weight:700;
+                    ">
+
+                    <i
+                        class="bi bi-cpu-fill"
+                        style="color:#ffd43b;">
+                    </i>
+
+                    AI Welfare
+
+                </h4>
+
+
+                <p>
+
+                    Smart Government Welfare
+                    Eligibility Platform.
+
+                </p>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="col-6 col-lg-2">
+
+                <h6 style="color:white;">
+
+                    Quick Links
+
+                </h6>
+
+
+                <a
+                    href="index.html"
+                    class="d-block mb-2 text-secondary text-decoration-none">
+
+                    Home
+
+                </a>
+
+
+                <a
+                    href="schemes.html"
+                    class="d-block mb-2 text-secondary text-decoration-none">
+
+                    Schemes
+
+                </a>
+
+
+                <a
+                    href="voice-assistant.html"
+                    class="d-block mb-2 text-secondary text-decoration-none">
+
+                    Voice Assistant
+
+                </a>
+
+
+                <a
+                    href="dashboard.html"
+                    class="d-block mb-2 text-secondary text-decoration-none">
+
+                    Dashboard
+
+                </a>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div class="col-6 col-lg-2">
+
+                <h6 style="color:white;">
+
+                    Information
+
+                </h6>
+
+
+                <a
+                    href="about.html"
+                    class="d-block mb-2 text-secondary text-decoration-none">
+
+                    About
+
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="d-block mb-2 text-secondary text-decoration-none">
+
+                    Contact
+
+                </a>
+
+
+                <a
+                    href="admin.html"
+                    class="d-block mb-2 text-secondary text-decoration-none">
+
+                    Admin
+
+                </a>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+
+            <div class="col-lg-4">
+
+                <h6 style="color:white;">
+
+                    Account
+
+                </h6>
+
+
+                <a
+                    href="login.html"
+                    class="d-block mb-2 text-secondary text-decoration-none">
+
+                    <i class="bi bi-box-arrow-in-right"></i>
+
+                    Login
+
+                </a>
+
+
+                <a
+                    href="register.html"
+                    class="d-block mb-2 text-secondary text-decoration-none">
+
+                    <i class="bi bi-person-plus-fill"></i>
+
+                    Register
+
+                </a>
+
+
+                <p class="small">
+
+                    <i class="bi bi-envelope"></i>
+
+                    support@aiwelfare.in
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr
+            style="
+                border-color:#334155;
+            ">
+
+
+        <div class="text-center small">
+
+            © 2026
+
+            <strong style="color:white;">
+
+                AI Welfare
+
+            </strong>
+
+            — AI Government Welfare Eligibility Checker.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     FLOATING AI VOICE ASSISTANT
+====================================================== -->
+
+<div
+    id="floatingVoiceAssistant"
+    class="floating-voice-assistant">
+
+
+    <!-- AI LOGO -->
+
+    <div class="floating-ai-logo">
+
+        <i class="bi bi-robot"></i>
+
+    </div>
+
+
+    <!-- TEXT -->
+
+    <div class="floating-voice-content">
+
+        <strong>
+
+            AI Welfare
+
+        </strong>
+
+        <span id="floatingVoiceStatus">
+
+            Voice Assistant
+
+        </span>
+
+    </div>
+
+
+    <!-- MIC -->
+
+    <button
+        id="floatingMicButton"
+        class="floating-mic-button"
+        type="button"
+        aria-label="Open AI Voice Assistant">
+
+        <i class="bi bi-mic-fill"></i>
+
+    </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<!-- =====================================================
+     APP JS
+====================================================== -->
+
+<script
+    src="js/app.js">
+</script>
+
+
+
+<!-- =====================================================
+     FLOATING MIC
+====================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const floatingMicButton =
+            document.getElementById(
+                "floatingMicButton"
+            );
+
+
+        if (!floatingMicButton) {
+            return;
+        }
+
+
+        floatingMicButton.addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "voice-assistant.html";
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>   

@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | AI Welfare</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(37, 99, 235, 0.10),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(96, 165, 250, 0.12),
+                    transparent 25%
+                ),
+                #f8fafc;
+            color: #172033;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .login-navbar {
+            background: #2563eb;
+            padding: 16px 0;
+            box-shadow: 0 6px 25px rgba(15, 23, 42, 0.12);
+        }
+
+        .brand {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 27px;
+            font-weight: 700;
+        }
+
+        .brand i {
+            color: #ffd43b;
+            margin-right: 8px;
+        }
+
+        .home-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .home-link:hover {
+            color: #ffd43b;
+        }
+
+        /* ================= MAIN ================= */
+
+        .login-wrapper {
+            min-height: calc(100vh - 70px);
+            padding: 45px 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 1050px;
+
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+
+            background: #ffffff;
+
+            border-radius: 28px;
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 70px rgba(15, 23, 42, 0.13);
+        }
+
+        /* ================= LEFT ================= */
+
+        .login-info {
+            position: relative;
+
+            padding: 55px 45px;
+
+            overflow: hidden;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0f172a,
+                    #1d4ed8,
+                    #2563eb
+                );
+        }
+
+        .login-info::before {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.08);
+
+            top: -90px;
+            right: -90px;
+        }
+
+        .login-info::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.06);
+
+            bottom: -80px;
+            left: -70px;
+        }
+
+        .info-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-icon {
+            width: 78px;
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255,255,255,0.12);
+
+            border: 1px solid rgba(255,255,255,0.18);
+
+            border-radius: 20px;
+
+            color: #ffd43b;
+
+            font-size: 34px;
+
+            margin-bottom: 30px;
+        }
+
+        .login-info h1 {
+            font-size: 38px;
+            line-height: 1.25;
+            font-weight: 700;
+
+            margin-bottom: 18px;
+        }
+
+        .login-info h1 span {
+            color: #ffd43b;
+        }
+
+        .info-description {
+            color: #dbeafe;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 32px;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .feature {
+            display: flex;
+            gap: 14px;
+
+            margin-bottom: 22px;
+        }
+
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+
+            min-width: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255,255,255,0.12);
+
+            border-radius: 50%;
+
+            color: #ffd43b;
+        }
+
+        .feature h6 {
+            margin: 0 0 4px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        .feature p {
+            margin: 0;
+
+            color: #bfdbfe;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+        /* ================= RIGHT ================= */
+
+        .login-form-area {
+            padding: 55px;
+
+            background: #ffffff;
+        }
+
+        .heading {
+            margin-bottom: 30px;
+        }
+
+        .heading span {
+            color: #2563eb;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+        .heading h2 {
+            font-size: 32px;
+
+            font-weight: 700;
+
+            margin: 8px 0;
+        }
+
+        .heading p {
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+        /* ================= MESSAGE ================= */
+
+        .message {
+            display: none;
+
+            padding: 12px 14px;
+
+            border-radius: 10px;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+        }
+
+        .message.success {
+            display: block;
+
+            color: #047857;
+
+            background: #ecfdf5;
+
+            border: 1px solid #a7f3d0;
+        }
+
+        .message.error {
+            display: block;
+
+            color: #b91c1c;
+
+            background: #fef2f2;
+
+            border: 1px solid #fecaca;
+        }
+
+        /* ================= INPUT ================= */
+
+        .form-label {
+            display: block;
+
+            color: #334155;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 7px;
+        }
+
+        .input-wrap {
+            position: relative;
+
+            margin-bottom: 20px;
+        }
+
+        .input-wrap > i {
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #94a3b8;
+
+            pointer-events: none;
+
+            z-index: 2;
+        }
+
+        .login-input {
+            width: 100%;
+
+            height: 54px;
+
+            border: 1px solid #dbe3ef;
+
+            border-radius: 11px;
+
+            padding: 0 48px 0 45px;
+
+            outline: none;
+
+            color: #334155;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 13px;
+
+            transition: 0.25s;
+        }
+
+        .login-input:focus {
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 4px rgba(37,99,235,0.10);
+        }
+
+        .login-input::placeholder {
+            color: #a1aebe;
+        }
+
+        /* ================= PASSWORD ================= */
+
+        .password-toggle {
+            position: absolute;
+
+            right: 14px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: transparent;
+
+            color: #64748b;
+
+            cursor: pointer;
+
+            font-size: 17px;
+        }
+
+        .password-toggle:hover {
+            color: #2563eb;
+        }
+
+        /* ================= OPTIONS ================= */
+
+        .options {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin: 2px 0 22px;
+        }
+
+        .remember {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #64748b;
+
+            font-size: 11px;
+        }
+
+        .remember input {
+            accent-color: #2563eb;
+        }
+
+        .forgot {
+            color: #2563eb;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= LOGIN BUTTON ================= */
+
+        .login-submit {
+            width: 100%;
+
+            height: 54px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color: #ffffff;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px rgba(37,99,235,0.20);
+
+            transition: 0.3s;
+        }
+
+        .login-submit:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 30px rgba(37,99,235,0.28);
+        }
+
+        .login-submit:disabled {
+            opacity: 0.7;
+
+            cursor: not-allowed;
+
+            transform: none;
+        }
+
+        /* ================= REGISTER ================= */
+
+        .register-text {
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 12px;
+
+            margin: 22px 0 0;
+        }
+
+        .register-text a {
+            color: #2563eb;
+
+            text-decoration: none;
+
+            font-weight: 600;
+        }
+
+        .register-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= INFO ================= */
+
+        .demo-note {
+            margin-top: 20px;
+
+            padding: 12px 14px;
+
+            background: #eff6ff;
+
+            border: 1px solid #bfdbfe;
+
+            border-radius: 10px;
+
+            color: #1e40af;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .login-card {
+                grid-template-columns: 1fr;
+
+                max-width: 650px;
+            }
+
+            .login-info {
+                padding: 42px 35px;
+            }
+
+            .login-info h1 {
+                font-size: 32px;
+            }
+
+            .login-form-area {
+                padding: 42px 35px;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .brand {
+                font-size: 22px;
+            }
+
+            .home-link {
+                font-size: 12px;
+            }
+
+            .login-wrapper {
+                padding: 25px 12px;
+            }
+
+            .login-card {
+                border-radius: 20px;
+            }
+
+            .login-info {
+                padding: 35px 25px;
+            }
+
+            .login-form-area {
+                padding: 35px 25px;
+            }
+
+            .login-info h1 {
+                font-size: 28px;
+            }
+
+            .heading h2 {
+                font-size: 27px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="login-navbar">
+
+        <div class="container">
+
+            <div class="d-flex align-items-center justify-content-between">
+
+                <a href="index.html" class="brand">
+
+                    <i class="bi bi-cpu-fill"></i>
+
+                    AI Welfare
+
+                </a>
+
+                <a href="index.html" class="home-link">
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main class="login-wrapper">
+
+        <div class="login-card">
+
+
+            <!-- LEFT SIDE -->
+
+            <section class="login-info">
+
+                <div class="info-content">
+
+                    <div class="info-icon">
+
+                        <i class="bi bi-person-check-fill"></i>
+
+                    </div>
+
+
+                    <h1>
+
+                        Welcome Back to
+
+                        <span>AI Welfare</span>
+
+                    </h1>
+
+
+                    <p class="info-description">
+
+                        Login to access your welfare profile,
+                        check scheme eligibility and explore
+                        government welfare opportunities.
+
+                    </p>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-check-lg"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h6>
+                                Smart Eligibility Checking
+                            </h6>
+
+                            <p>
+                                Check welfare scheme eligibility
+                                using your profile information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-shield-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h6>
+                                Secure Account Access
+                            </h6>
+
+                            <p>
+                                Access your account through a simple
+                                and protected login experience.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-grid-3x3-gap"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h6>
+                                Explore Welfare Schemes
+                            </h6>
+
+                            <p>
+                                Discover relevant government welfare
+                                programmes in one place.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT SIDE -->
+
+            <section class="login-form-area">
+
+                <div class="heading">
+
+                    <span>
+                        ACCOUNT LOGIN
+                    </span>
+
+                    <h2>
+                        Welcome back
+                    </h2>
+
+                    <p>
+                        Enter your registered email and password.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="loginMessage"
+                    class="message">
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <form
+                    id="loginForm"
+                    novalidate>
+
+
+                    <!-- EMAIL -->
+
+                    <label
+                        class="form-label"
+                        for="loginEmail">
+
+                        Email Address
+
+                    </label>
+
+
+                    <div class="input-wrap">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            class="login-input"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <label
+                        class="form-label"
+                        for="loginPassword">
+
+                        Password
+
+                    </label>
+
+
+                    <div class="input-wrap">
+
+                        <i class="bi bi-lock"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            class="login-input"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required>
+
+
+                        <button
+                            type="button"
+                            id="passwordToggle"
+                            class="password-toggle">
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe">
+
+                            Remember me
+
+                        </label>
+
+
+                        <a
+                            href="#"
+                            class="forgot"
+                            id="forgotPassword">
+
+                            Forgot password?
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-submit"
+                        id="loginButton">
+
+                        <i class="bi bi-box-arrow-in-right me-2"></i>
+
+                        Login to Account
+
+                    </button>
+
+                </form>
+
+
+                <div class="demo-note">
+
+                    <i class="bi bi-info-circle me-1"></i>
+
+                    Your frontend demo account is stored
+                    in browser localStorage.
+
+                </div>
+
+
+                <p class="register-text">
+
+                    Don't have an account?
+
+                    <a href="register.html">
+
+                        Create an account
+
+                    </a>
+
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- LOGIN JAVASCRIPT -->
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1391 @@
+/* =========================================================
+   AI WELFARE
+   ELIGIBILITY CHECKER
+   PROFESSIONAL PAGE CSS
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.eligibility-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: #2563eb;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.15);
+}
+
+.eligibility-nav-container {
+    width: min(1400px, 92%);
+    min-height: 82px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.eligibility-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #ffffff;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.eligibility-logo:hover {
+    color: #ffd43b;
+}
+
+.eligibility-logo i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    color: #ffd43b;
+
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.eligibility-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.eligibility-nav-menu {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 38px;
+}
+
+.eligibility-nav-menu li {
+    list-style: none;
+}
+
+.eligibility-nav-menu a {
+    position: relative;
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.eligibility-nav-menu a:not(.eligibility-login)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background: #ffd43b;
+
+    transition: 0.3s ease;
+}
+
+.eligibility-nav-menu a:not(.eligibility-login):hover {
+    color: #ffd43b;
+}
+
+.eligibility-nav-menu a:not(.eligibility-login):hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.eligibility-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 120px;
+
+    padding: 12px 25px;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+    color: #2563eb !important;
+
+    font-weight: 700 !important;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s ease;
+}
+
+.eligibility-login:hover {
+    background: #ffd43b;
+
+    color: #0f172a !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.eligibility-menu-btn {
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.eligibility-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.eligibility-page {
+    min-height: calc(100vh - 82px);
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(37, 99, 235, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(96, 165, 250, 0.12),
+            transparent 30%
+        ),
+        #f8fafc;
+
+    padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.eligibility-container {
+    width: min(1400px, 92%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO SECTION
+========================================================= */
+
+.eligibility-intro {
+    padding: 70px 0 45px;
+
+    text-align: center;
+}
+
+.intro-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 20px;
+
+    border-radius: 50px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    color: #2563eb;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.intro-badge i {
+    color: #2563eb;
+}
+
+.eligibility-intro h1 {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    color: #0f172a;
+
+    font-size: clamp(36px, 5vw, 58px);
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.eligibility-intro h1 span {
+    color: #2563eb;
+}
+
+.eligibility-intro p {
+    max-width: 850px;
+
+    margin: 22px auto 0;
+
+    color: #64748b;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ELIGIBILITY SECTION
+========================================================= */
+
+.eligibility-section {
+    padding: 20px 0 40px;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.eligibility-card {
+    display: grid;
+
+    grid-template-columns: 390px 1fr;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   LEFT INFORMATION PANEL
+========================================================= */
+
+.eligibility-info-panel {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 55px 45px;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 90% 5%,
+            rgba(96, 165, 250, 0.45),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #0f172a 0%,
+            #172554 40%,
+            #2563eb 100%
+        );
+}
+
+.eligibility-info-panel::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -130px;
+    top: -110px;
+
+    border-radius: 50%;
+
+    background: rgba(96, 165, 250, 0.18);
+}
+
+.eligibility-info-panel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: -140px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 212, 59, 0.08);
+}
+
+
+/* =========================================================
+   INFO CONTENT
+========================================================= */
+
+.eligibility-info-panel > * {
+    position: relative;
+    z-index: 2;
+}
+
+.info-icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    color: #ffd43b;
+
+    font-size: 35px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.info-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #93c5fd;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.eligibility-info-panel h2 {
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+.eligibility-info-panel > p {
+    margin-bottom: 32px;
+
+    color: #dbeafe;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.eligibility-features {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.eligibility-features li {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.feature-icon {
+    flex: 0 0 auto;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffd43b;
+
+    color: #0f172a;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   INFO BOTTOM BOX
+========================================================= */
+
+.info-bottom-box {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 45px;
+    padding: 18px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.info-bottom-box > i {
+    flex: 0 0 auto;
+
+    color: #ffd43b;
+
+    font-size: 21px;
+}
+
+.info-bottom-box strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+.info-bottom-box p {
+    color: #bfdbfe;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORM PANEL
+========================================================= */
+
+.eligibility-form-panel {
+    padding: 55px 55px 40px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.form-header {
+    margin-bottom: 32px;
+}
+
+.form-step {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.form-header h2 {
+    margin-bottom: 8px;
+
+    color: #0f172a;
+
+    font-size: 34px;
+
+    line-height: 1.25;
+
+    font-weight: 800;
+}
+
+.form-header p {
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+.required-star {
+    color: #ef4444;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 28px;
+    row-gap: 24px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    min-width: 0;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper > i {
+    position: absolute;
+
+    left: 17px;
+
+    z-index: 2;
+
+    color: #64748b;
+
+    font-size: 18px;
+
+    pointer-events: none;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   INPUTS & SELECTS
+========================================================= */
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 0 18px 0 48px;
+
+    border: 1.5px solid #dbe3ef;
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.input-wrapper input::placeholder {
+    color: #94a3b8;
+}
+
+.input-wrapper select {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    cursor: pointer;
+
+    padding-right: 45px;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #64748b 50%
+        ),
+        linear-gradient(
+            135deg,
+            #64748b 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 20px) 25px,
+        calc(100% - 15px) 25px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    border-color: #60a5fa;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+.input-wrapper:focus-within > i {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   NUMBER INPUT
+========================================================= */
+
+.input-wrapper input[type="number"] {
+    appearance: auto;
+}
+
+
+/* =========================================================
+   FORM ACTION
+========================================================= */
+
+.form-action {
+    display: flex;
+
+    justify-content: flex-start;
+
+    margin-top: 32px;
+}
+
+
+/* =========================================================
+   CHECK ELIGIBILITY BUTTON
+========================================================= */
+
+.check-eligibility-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 11px;
+
+    min-height: 56px;
+
+    padding: 0 28px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.check-eligibility-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 32px rgba(37, 99, 235, 0.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8,
+            #1e40af
+        );
+}
+
+.check-eligibility-btn:active {
+    transform: translateY(-1px);
+}
+
+.check-eligibility-btn i:last-child {
+    transition: transform 0.25s ease;
+}
+
+.check-eligibility-btn:hover i:last-child {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.eligibility-message {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 14px 17px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.eligibility-result {
+    display: none;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    margin-top: 22px;
+
+    padding: 22px;
+
+    border-radius: 16px;
+
+    border: 1px solid #bfdbfe;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f8fbff
+        );
+
+    animation: resultFade 0.4s ease;
+}
+
+.eligibility-result.show {
+    display: flex;
+}
+
+.result-icon {
+    flex: 0 0 auto;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 23px;
+}
+
+.result-content h3 {
+    margin-bottom: 5px;
+
+    color: #1e3a8a;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.result-content p {
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.eligibility-disclaimer {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    margin-top: 28px;
+    padding-top: 22px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.eligibility-disclaimer > i {
+    flex: 0 0 auto;
+
+    margin-top: 2px;
+
+    color: #2563eb;
+
+    font-size: 17px;
+}
+
+.eligibility-disclaimer p {
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.eligibility-footer {
+    padding: 25px 0;
+
+    background: #0f172a;
+
+    color: #94a3b8;
+
+    text-align: center;
+}
+
+.eligibility-footer p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+.eligibility-footer strong {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes resultFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .eligibility-card {
+        grid-template-columns: 330px 1fr;
+    }
+
+    .eligibility-info-panel {
+        padding: 45px 35px;
+    }
+
+    .eligibility-info-panel h2 {
+        font-size: 32px;
+    }
+
+    .eligibility-form-panel {
+        padding: 45px 35px 35px;
+    }
+
+    .form-grid {
+        column-gap: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .eligibility-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .eligibility-navigation {
+        position: absolute;
+
+        top: 82px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        padding: 15px 4%;
+
+        background: #2563eb;
+
+        box-shadow:
+            0 12px 25px rgba(15, 23, 42, 0.15);
+    }
+
+    .eligibility-navigation.show {
+        display: block;
+    }
+
+    .eligibility-nav-menu {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+    }
+
+    .eligibility-nav-menu a {
+        display: block;
+
+        padding: 12px 15px;
+
+        border-radius: 10px;
+    }
+
+    .eligibility-nav-menu a:hover {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .eligibility-nav-menu a:not(.eligibility-login)::after {
+        display: none;
+    }
+
+    .eligibility-login {
+        text-align: center;
+
+        margin-top: 8px;
+    }
+
+    .eligibility-card {
+        grid-template-columns: 1fr;
+    }
+
+    .eligibility-info-panel {
+        padding: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .eligibility-nav-container {
+        min-height: 72px;
+    }
+
+    .eligibility-logo {
+        font-size: 24px;
+    }
+
+    .eligibility-logo i {
+        width: 35px;
+        height: 35px;
+
+        font-size: 26px;
+    }
+
+    .eligibility-navigation {
+        top: 72px;
+    }
+
+    .eligibility-page {
+        min-height: auto;
+
+        padding-bottom: 50px;
+    }
+
+    .eligibility-intro {
+        padding: 50px 0 30px;
+    }
+
+    .eligibility-intro h1 {
+        font-size: 38px;
+    }
+
+    .eligibility-intro p {
+        font-size: 15px;
+    }
+
+    .eligibility-section {
+        padding-top: 10px;
+    }
+
+    .eligibility-card {
+        border-radius: 20px;
+    }
+
+    .eligibility-info-panel {
+        padding: 38px 28px;
+    }
+
+    .eligibility-info-panel h2 {
+        font-size: 30px;
+    }
+
+    .eligibility-form-panel {
+        padding: 35px 25px 30px;
+    }
+
+    .form-header h2 {
+        font-size: 28px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        row-gap: 20px;
+    }
+
+    .form-action {
+        width: 100%;
+    }
+
+    .check-eligibility-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .eligibility-container {
+        width: 94%;
+    }
+
+    .eligibility-intro h1 {
+        font-size: 32px;
+    }
+
+    .eligibility-intro p {
+        font-size: 14px;
+    }
+
+    .intro-badge {
+        font-size: 12px;
+
+        padding: 8px 14px;
+    }
+
+    .eligibility-info-panel {
+        padding: 32px 22px;
+    }
+
+    .eligibility-info-panel h2 {
+        font-size: 27px;
+    }
+
+    .eligibility-form-panel {
+        padding: 30px 18px 25px;
+    }
+
+    .form-header h2 {
+        font-size: 25px;
+    }
+
+    .input-wrapper input,
+    .input-wrapper select {
+        min-height: 54px;
+
+        font-size: 13px;
+    }
+
+    .check-eligibility-btn {
+        min-height: 54px;
+
+        padding: 0 18px;
+
+        font-size: 14px;
+    }
+
+    .eligibility-result {
+        padding: 17px;
+    }
+
+    .result-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 20px;
+    }
+
+}
+/* =========================================================
+   CHECK ELIGIBILITY BUTTON - FINAL FIX
+========================================================= */
+
+.check-eligibility-btn {
+    width: auto !important;
+    min-width: 260px;
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
+
+    padding: 0 28px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1 !important;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.check-eligibility-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(37, 99, 235, 0.32);
+
+    background: linear-gradient(
+        135deg,
+        #1d4ed8,
+        #1e40af
+    );
+}
+
+
+.check-eligibility-btn:active {
+    transform: translateY(0);
+}
+
+
+.check-eligibility-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+.check-eligibility-btn i {
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+.check-eligibility-btn span {
+    display: inline-block;
+    line-height: 1;
+}

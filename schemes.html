@@ -1,0 +1,3059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="AI Welfare Government Welfare Schemes Portal">
+
+    <title>Government Schemes | AI Welfare</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: #2563eb;
+
+            box-shadow:
+                0 8px 25px rgba(15, 23, 42, 0.15);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: auto;
+
+            min-height: 78px;
+
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .logo i {
+            color: #ffd43b;
+            font-size: 30px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: white;
+
+            font-size: 15px;
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #ffd43b;
+        }
+
+        .login-button {
+            padding: 11px 25px;
+
+            border-radius: 30px;
+
+            background: white;
+
+            color: #2563eb !important;
+
+            font-weight: 600 !important;
+        }
+
+        .login-button:hover {
+            background: #ffd43b;
+
+            color: #111827 !important;
+
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+
+            border: none;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 70px 20px 60px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f8fbff 0%,
+                    #edf5ff 55%,
+                    #e0edff 100%
+                );
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            border-radius: 50%;
+
+            background: rgba(96, 165, 250, 0.12);
+
+            right: -120px;
+            top: -120px;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 16px;
+
+            margin-bottom: 18px;
+
+            border-radius: 30px;
+
+            background: #e8f1ff;
+
+            color: #2563eb;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+        .hero-badge i {
+            color: #f59e0b;
+        }
+
+        .hero h1 {
+            max-width: 650px;
+
+            color: #172554;
+
+            font-size: 50px;
+
+            line-height: 1.15;
+
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            display: block;
+
+            color: #2563eb;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            margin: 20px 0 28px;
+
+            color: #64748b;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           STATS
+        ===================================================== */
+
+        .stats {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .stat {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 12px 14px;
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 12px;
+
+            background: white;
+
+            box-shadow:
+                0 8px 20px rgba(37, 99, 235, 0.06);
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            color: white;
+
+            font-size: 18px;
+        }
+
+        .stat:nth-child(1) .stat-icon {
+            background: #2563eb;
+        }
+
+        .stat:nth-child(2) .stat-icon {
+            background: #16a34a;
+        }
+
+        .stat:nth-child(3) .stat-icon {
+            background: #7c3aed;
+        }
+
+        .stat strong {
+            display: block;
+
+            color: #2563eb;
+
+            font-size: 17px;
+        }
+
+        .stat span {
+            display: block;
+
+            color: #64748b;
+
+            font-size: 9px;
+        }
+
+
+        /* =====================================================
+           HERO VISUAL
+        ===================================================== */
+
+        .hero-visual {
+            position: relative;
+
+            min-height: 320px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle {
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(147, 197, 253, 0.45),
+                    rgba(219, 234, 254, 0.15)
+                );
+        }
+
+        .building {
+            position: relative;
+
+            z-index: 2;
+
+            width: 240px;
+        }
+
+        .roof {
+            width: 220px;
+            height: 45px;
+
+            margin: auto;
+
+            background: #60a5fa;
+
+            clip-path:
+                polygon(
+                    50% 0,
+                    100% 100%,
+                    0 100%
+                );
+        }
+
+        .top {
+            width: 190px;
+            height: 18px;
+
+            margin: auto;
+
+            background: #93c5fd;
+        }
+
+        .columns {
+            height: 125px;
+
+            padding: 0 15px;
+
+            display: flex;
+
+            justify-content: space-around;
+            align-items: flex-end;
+
+            background: #dbeafe;
+        }
+
+        .columns span {
+            width: 27px;
+            height: 115px;
+
+            border-radius: 4px 4px 0 0;
+
+            background: white;
+        }
+
+        .base {
+            width: 215px;
+            height: 18px;
+
+            margin: auto;
+
+            background: #60a5fa;
+        }
+
+        .floating-icon {
+            position: absolute;
+
+            z-index: 5;
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background: white;
+
+            box-shadow:
+                0 12px 30px rgba(15, 23, 42, 0.12);
+
+            font-size: 24px;
+
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .education {
+            left: 30px;
+            top: 20px;
+
+            color: #2563eb;
+        }
+
+        .health {
+            right: 30px;
+            top: 10px;
+
+            color: #16a34a;
+
+            animation-delay: 0.5s;
+        }
+
+        .home {
+            left: 65px;
+            bottom: 20px;
+
+            color: #f59e0b;
+
+            animation-delay: 1s;
+        }
+
+        .job {
+            right: 45px;
+            bottom: 35px;
+
+            color: #7c3aed;
+
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+
+        /* =====================================================
+           FILTER
+        ===================================================== */
+
+        .filter-section {
+            position: relative;
+
+            z-index: 10;
+
+            margin-top: -25px;
+
+            padding: 0 20px;
+        }
+
+        .filter-box {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1fr 1fr auto;
+
+            gap: 16px;
+
+            align-items: end;
+
+            padding: 22px;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 16px;
+
+            background: white;
+
+            box-shadow:
+                0 15px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        .filter-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #334155;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper > i {
+            position: absolute;
+
+            left: 14px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #64748b;
+
+            pointer-events: none;
+        }
+
+        .filter-input,
+        .filter-select {
+            width: 100%;
+
+            height: 44px;
+
+            border: 1px solid #dbe3ef;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            background: white;
+
+            color: #334155;
+
+            font-size: 11px;
+        }
+
+        .filter-input {
+            padding: 0 14px 0 40px;
+        }
+
+        .filter-select {
+            padding: 0 12px 0 40px;
+
+            cursor: pointer;
+        }
+
+        .filter-input:focus,
+        .filter-select:focus {
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px rgba(37, 99, 235, 0.08);
+        }
+
+        .reset-button {
+            height: 44px;
+
+            padding: 0 18px;
+
+            border: 1px solid #93c5fd;
+
+            border-radius: 9px;
+
+            background: white;
+
+            color: #2563eb;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .reset-button:hover {
+            background: #2563eb;
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           SCHEMES SECTION
+        ===================================================== */
+
+        .schemes-section {
+            padding: 65px 20px;
+
+            background: white;
+        }
+
+        .schemes-container {
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+        .section-header {
+            display: flex;
+
+            align-items: end;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 28px;
+        }
+
+        .section-label {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            margin-bottom: 7px;
+
+            color: #2563eb;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+        .section-header h2 {
+            color: #172554;
+
+            font-size: 30px;
+
+            font-weight: 700;
+        }
+
+        .section-header p {
+            margin-top: 7px;
+
+            color: #64748b;
+
+            font-size: 11px;
+        }
+
+        .scheme-count {
+            padding: 9px 15px;
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 30px;
+
+            color: #475569;
+
+            font-size: 10px;
+
+            white-space: nowrap;
+        }
+
+        .scheme-count strong {
+            color: #2563eb;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           CARD GRID
+        ===================================================== */
+
+        .scheme-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .scheme-card {
+            position: relative;
+
+            padding: 22px 19px 18px;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 17px;
+
+            background: white;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(15, 23, 42, 0.05);
+
+            transition:
+                0.3s ease;
+        }
+
+        .scheme-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            right: -55px;
+            top: -55px;
+
+            border-radius: 50%;
+
+            background: #eff6ff;
+        }
+
+        .scheme-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #bfdbfe;
+
+            box-shadow:
+                0 20px 40px rgba(37, 99, 235, 0.12);
+        }
+
+
+        /* =====================================================
+           CARD ICON
+        ===================================================== */
+
+        .card-icon {
+            position: relative;
+
+            z-index: 2;
+
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 14px;
+
+            border-radius: 14px;
+
+            color: white;
+
+            font-size: 24px;
+        }
+
+        .agriculture-icon {
+            background:
+                linear-gradient(
+                    135deg,
+                    #16a34a,
+                    #4ade80
+                );
+        }
+
+        .health-icon {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ef4444,
+                    #fb7185
+                );
+        }
+
+        .education-icon {
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #60a5fa
+                );
+        }
+
+        .employment-icon {
+            background:
+                linear-gradient(
+                    135deg,
+                    #f97316,
+                    #fb923c
+                );
+        }
+
+        .housing-icon {
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #a78bfa
+                );
+        }
+
+        .women-icon {
+            background:
+                linear-gradient(
+                    135deg,
+                    #db2777,
+                    #f472b6
+                );
+        }
+
+
+        /* =====================================================
+           CARD CATEGORY
+        ===================================================== */
+
+        .category {
+            display: inline-block;
+
+            padding: 5px 10px;
+
+            margin-bottom: 10px;
+
+            border-radius: 20px;
+
+            font-size: 8px;
+
+            font-weight: 600;
+        }
+
+        .agriculture-category {
+            color: #15803d;
+            background: #ecfdf5;
+        }
+
+        .health-category {
+            color: #dc2626;
+            background: #fef2f2;
+        }
+
+        .education-category {
+            color: #2563eb;
+            background: #eff6ff;
+        }
+
+        .employment-category {
+            color: #ea580c;
+            background: #fff7ed;
+        }
+
+        .housing-category {
+            color: #7c3aed;
+            background: #f5f3ff;
+        }
+
+        .women-category {
+            color: #db2777;
+            background: #fdf2f8;
+        }
+
+
+        /* =====================================================
+           CARD CONTENT
+        ===================================================== */
+
+        .scheme-card h3 {
+            min-height: 52px;
+
+            margin-bottom: 9px;
+
+            color: #172554;
+
+            font-size: 18px;
+
+            line-height: 1.35;
+
+            font-weight: 700;
+        }
+
+        .scheme-card p {
+            min-height: 58px;
+
+            margin-bottom: 14px;
+
+            color: #64748b;
+
+            font-size: 9px;
+
+            line-height: 1.7;
+        }
+
+        .scheme-details {
+            padding-top: 11px;
+
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .scheme-details div {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            margin-bottom: 6px;
+
+            color: #64748b;
+
+            font-size: 8px;
+        }
+
+        .scheme-details i {
+            color: #475569;
+        }
+
+
+        /* =====================================================
+           CARD FOOTER
+        ===================================================== */
+
+        .card-footer {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-top: 12px;
+        }
+
+        .active {
+            display: flex;
+
+            align-items: center;
+
+            gap: 4px;
+
+            color: #16a34a;
+
+            font-size: 8px;
+
+            font-weight: 600;
+        }
+
+        .details-button {
+            border: 1px solid #bfdbfe;
+
+            border-radius: 7px;
+
+            padding: 7px 10px;
+
+            background: white;
+
+            color: #2563eb;
+
+            font-size: 8px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .details-button:hover {
+            background: #2563eb;
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           NO RESULT
+        ===================================================== */
+
+        .no-results {
+            display: none;
+
+            padding: 60px 20px;
+
+            text-align: center;
+        }
+
+        .no-results i {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 65px;
+            height: 65px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-size: 24px;
+        }
+
+        .no-results h3 {
+            margin-top: 15px;
+
+            color: #172554;
+
+            font-size: 21px;
+        }
+
+        .no-results p {
+            margin-top: 5px;
+
+            color: #64748b;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta-section {
+            padding: 0 20px 60px;
+
+            background: white;
+        }
+
+        .cta {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+            padding: 30px 35px;
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #eff6ff,
+                    #e7f0ff
+                );
+        }
+
+        .cta-icon {
+            width: 70px;
+            height: 70px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 32px;
+        }
+
+        .cta-content {
+            flex: 1;
+        }
+
+        .cta-content span {
+            color: #2563eb;
+
+            font-size: 9px;
+
+            font-weight: 600;
+        }
+
+        .cta-content h2 {
+            margin: 4px 0;
+
+            color: #172554;
+
+            font-size: 23px;
+        }
+
+        .cta-content p {
+            color: #64748b;
+
+            font-size: 9px;
+
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            border-radius: 9px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 35px 20px 20px;
+
+            background: #0f172a;
+
+            color: #cbd5e1;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+        .footer-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .footer-logo {
+            color: white;
+
+            font-size: 20px;
+
+            font-weight: 700;
+        }
+
+        .footer-logo i {
+            color: #ffd43b;
+
+            margin-right: 7px;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+
+            color: #94a3b8;
+
+            font-size: 9px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+
+            font-size: 9px;
+
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffd43b;
+        }
+
+        .footer-bottom {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 25px;
+
+            padding-top: 18px;
+
+            border-top: 1px solid #1e293b;
+
+            color: #64748b;
+
+            font-size: 8px;
+        }
+
+
+        /* =====================================================
+           MODAL
+        ===================================================== */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background: rgba(15, 23, 42, 0.65);
+
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-box {
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            max-width: 480px;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background: white;
+
+            box-shadow:
+                0 30px 70px rgba(15, 23, 42, 0.25);
+        }
+
+        .close-modal {
+            position: absolute;
+
+            top: 15px;
+            right: 15px;
+
+            width: 35px;
+            height: 35px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #f1f5f9;
+
+            color: #475569;
+
+            cursor: pointer;
+        }
+
+        .modal-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 15px;
+
+            border-radius: 14px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-size: 23px;
+        }
+
+        .modal-box h2 {
+            margin-bottom: 8px;
+
+            color: #172554;
+
+            font-size: 25px;
+        }
+
+        .modal-box p {
+            color: #64748b;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+        .modal-info {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 12px;
+
+            margin: 20px 0;
+        }
+
+        .modal-info-item {
+            padding: 12px;
+
+            border-radius: 10px;
+
+            background: #f8fafc;
+        }
+
+        .modal-info-item span {
+            display: block;
+
+            color: #94a3b8;
+
+            font-size: 8px;
+        }
+
+        .modal-info-item strong {
+            display: block;
+
+            margin-top: 4px;
+
+            color: #334155;
+
+            font-size: 10px;
+        }
+
+        .modal-eligibility {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            width: 100%;
+
+            padding: 12px;
+
+            border-radius: 9px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero h1,
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+
+            .filter-box {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .scheme-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .navbar-container {
+                min-height: 68px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+
+                position: absolute;
+
+                top: 68px;
+                left: 0;
+
+                width: 100%;
+
+                padding: 15px 25px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 18px;
+
+                background: #2563eb;
+            }
+
+            .nav-menu.show {
+                display: flex;
+            }
+
+            .hero {
+                padding-top: 45px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-description {
+                font-size: 12px;
+            }
+
+            .filter-box {
+                grid-template-columns: 1fr;
+            }
+
+            .scheme-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .cta {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .cta-button {
+                width: 100%;
+
+                justify-content: center;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+
+                gap: 10px;
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+                font-size: 31px;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .stat {
+                width: 100%;
+            }
+
+            .hero-visual {
+                min-height: 270px;
+            }
+
+            .circle {
+                width: 250px;
+                height: 250px;
+            }
+
+            .building {
+                transform: scale(0.8);
+            }
+
+            .floating-icon {
+                width: 48px;
+                height: 48px;
+
+                font-size: 19px;
+            }
+
+            .education {
+                left: 0;
+            }
+
+            .health {
+                right: 0;
+            }
+
+            .home {
+                left: 20px;
+            }
+
+            .job {
+                right: 10px;
+            }
+
+            .modal-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="navbar-container">
+
+        <a href="index.html" class="logo">
+
+            <i class="bi bi-cpu-fill"></i>
+
+            AI Welfare
+
+        </a>
+
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            type="button"
+            aria-label="Open Menu">
+
+            <i class="bi bi-list"></i>
+
+        </button>
+
+
+        <ul class="nav-menu" id="navMenu">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="schemes.html" class="active">
+                    Schemes
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html" class="login-button">
+                    <i class="bi bi-person-fill"></i>
+                    Login
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+
+                <i class="bi bi-stars"></i>
+
+                Government Welfare Portal
+
+            </span>
+
+
+            <h1>
+
+                Discover Government
+
+                <span>
+                    Welfare Schemes
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Explore government welfare schemes designed to
+                support citizens across education, healthcare,
+                employment, housing, agriculture and social welfare.
+
+            </p>
+
+
+            <div class="stats">
+
+
+                <div class="stat">
+
+                    <div class="stat-icon">
+
+                        <i class="bi bi-clipboard-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            500+
+                        </strong>
+
+                        <span>
+                            Government Schemes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon">
+
+                        <i class="bi bi-people"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            28+
+                        </strong>
+
+                        <span>
+                            States & UTs
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon">
+
+                        <i class="bi bi-layers"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            10+
+                        </strong>
+
+                        <span>
+                            Categories
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO VISUAL -->
+
+        <div class="hero-visual">
+
+            <div class="circle"></div>
+
+
+            <div class="building">
+
+                <div class="roof"></div>
+
+                <div class="top"></div>
+
+                <div class="columns">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <div class="base"></div>
+
+            </div>
+
+
+            <div class="floating-icon education">
+
+                <i class="bi bi-mortarboard-fill"></i>
+
+            </div>
+
+
+            <div class="floating-icon health">
+
+                <i class="bi bi-heart-pulse-fill"></i>
+
+            </div>
+
+
+            <div class="floating-icon home">
+
+                <i class="bi bi-house-fill"></i>
+
+            </div>
+
+
+            <div class="floating-icon job">
+
+                <i class="bi bi-briefcase-fill"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FILTER
+===================================================== -->
+
+<section class="filter-section">
+
+    <div class="filter-box">
+
+
+        <!-- SEARCH -->
+
+        <div class="filter-group">
+
+            <label for="searchInput">
+                Search Schemes
+            </label>
+
+            <div class="input-wrapper">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="filter-input"
+                    placeholder="Search government schemes...">
+
+            </div>
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="filter-group">
+
+            <label for="categoryFilter">
+                Category
+            </label>
+
+            <div class="input-wrapper">
+
+                <i class="bi bi-grid"></i>
+
+                <select
+                    id="categoryFilter"
+                    class="filter-select">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="agriculture">
+                        Agriculture
+                    </option>
+
+                    <option value="health">
+                        Healthcare
+                    </option>
+
+                    <option value="education">
+                        Education
+                    </option>
+
+                    <option value="employment">
+                        Employment
+                    </option>
+
+                    <option value="housing">
+                        Housing
+                    </option>
+
+                    <option value="women">
+                        Women & Child
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATE -->
+
+        <div class="filter-group">
+
+            <label for="stateFilter">
+                State / UT
+            </label>
+
+            <div class="input-wrapper">
+
+                <i class="bi bi-geo-alt"></i>
+
+                <select
+                    id="stateFilter"
+                    class="filter-select">
+
+                    <option value="all">
+                        All States
+                    </option>
+
+                    <option value="central">
+                        Central Government
+                    </option>
+
+                    <option value="uttar-pradesh">
+                        Uttar Pradesh
+                    </option>
+
+                    <option value="delhi">
+                        Delhi
+                    </option>
+
+                    <option value="maharashtra">
+                        Maharashtra
+                    </option>
+
+                    <option value="rajasthan">
+                        Rajasthan
+                    </option>
+
+                    <option value="bihar">
+                        Bihar
+                    </option>
+
+                    <option value="haryana">
+                        Haryana
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESET -->
+
+        <button
+            type="button"
+            class="reset-button"
+            id="resetButton">
+
+            <i class="bi bi-arrow-clockwise"></i>
+
+            Reset
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCHEMES
+===================================================== -->
+
+<section class="schemes-section">
+
+    <div class="schemes-container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-label">
+
+                    <i class="bi bi-grid-fill" 
+                    style="color:#aef444!important;">
+                </i>
+
+                    Explore Schemes
+
+                </div>
+
+                <h2>
+                    Popular Government Schemes
+                </h2>
+
+                <p>
+                    Browse welfare schemes and find opportunities
+                    that may match your requirements.
+                </p>
+
+            </div>
+
+
+            <div class="scheme-count">
+
+                <strong id="schemeCount">
+                    6
+                </strong>
+
+                Schemes Found
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CARDS
+        ================================================= -->
+
+        <div class="scheme-grid" id="schemeGrid">
+
+
+            <!-- CARD 1 -->
+
+            <article
+                class="scheme-card"
+                data-category="agriculture"
+                data-state="central"
+                data-name="pm kisan samman nidhi">
+
+                <div class="card-icon agriculture-icon">
+
+                    <i class="bi bi-flower1"></i>
+
+                </div>
+
+                <span class="category agriculture-category">
+                    Agriculture
+                </span>
+
+                <h3>
+                    PM-KISAN
+                    <br>
+                    Samman Nidhi
+                </h3>
+
+                <p>
+                    Financial support scheme for eligible farmer
+                    families to support agricultural and household
+                    requirements.
+                </p>
+
+                <div class="scheme-details">
+
+                    <div>
+                        <i class="bi bi-building"></i>
+                        Central Government
+                    </div>
+
+                    <div>
+                        <i class="bi bi-geo-alt"></i>
+                        All India
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <span class="active">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Active Scheme
+
+                    </span>
+
+                    <button
+                        type="button"
+                        class="details-button"
+                        data-title="PM-KISAN Samman Nidhi"
+                        data-category="Agriculture"
+                        data-description="Financial support scheme for eligible farmer families."
+                        data-coverage="All India">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 2 -->
+
+            <article
+                class="scheme-card"
+                data-category="health"
+                data-state="central"
+                data-name="ayushman bharat">
+
+                <div class="card-icon health-icon">
+
+                    <i class="bi bi-heart-pulse-fill"></i>
+
+                </div>
+
+                <span class="category health-category">
+                    Healthcare
+                </span>
+
+                <h3>
+                    Ayushman
+                    <br>
+                    Bharat
+                </h3>
+
+                <p>
+                    Healthcare support initiative intended to provide
+                    eligible families access to quality medical treatment.
+                </p>
+
+                <div class="scheme-details">
+
+                    <div>
+                        <i class="bi bi-building"></i>
+                        Central Government
+                    </div>
+
+                    <div>
+                        <i class="bi bi-geo-alt"></i>
+                        All India
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <span class="active">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Active Scheme
+
+                    </span>
+
+                    <button
+                        type="button"
+                        class="details-button"
+                        data-title="Ayushman Bharat"
+                        data-category="Healthcare"
+                        data-description="Healthcare support initiative for eligible beneficiaries."
+                        data-coverage="All India">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 3 -->
+
+            <article
+                class="scheme-card"
+                data-category="education"
+                data-state="central"
+                data-name="national scholarship portal">
+
+                <div class="card-icon education-icon">
+
+                    <i class="bi bi-mortarboard-fill"></i>
+
+                </div>
+
+                <span class="category education-category">
+                    Education
+                </span>
+
+                <h3>
+                    National
+                    <br>
+                    Scholarship Portal
+                </h3>
+
+                <p>
+                    Digital platform helping eligible students discover
+                    and apply for scholarship opportunities.
+                </p>
+
+                <div class="scheme-details">
+
+                    <div>
+                        <i class="bi bi-building"></i>
+                        Government
+                    </div>
+
+                    <div>
+                        <i class="bi bi-geo-alt"></i>
+                        All India
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <span class="active">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Active Scheme
+
+                    </span>
+
+                    <button
+                        type="button"
+                        class="details-button"
+                        data-title="National Scholarship Portal"
+                        data-category="Education"
+                        data-description="Platform for discovering and applying for scholarship opportunities."
+                        data-coverage="All India">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 4 -->
+
+            <article
+                class="scheme-card"
+                data-category="employment"
+                data-state="central"
+                data-name="pm kaushal vikas yojana">
+
+                <div class="card-icon employment-icon">
+
+                    <i class="bi bi-briefcase-fill"></i>
+
+                </div>
+
+                <span class="category employment-category">
+                    Employment
+                </span>
+
+                <h3>
+                    PM Kaushal
+                    <br>
+                    Vikas Yojana
+                </h3>
+
+                <p>
+                    Skill development initiative supporting eligible
+                    individuals with training opportunities.
+                </p>
+
+                <div class="scheme-details">
+
+                    <div>
+                        <i class="bi bi-building"></i>
+                        Central Government
+                    </div>
+
+                    <div>
+                        <i class="bi bi-geo-alt"></i>
+                        All India
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <span class="active">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Active Scheme
+
+                    </span>
+
+                    <button
+                        type="button"
+                        class="details-button"
+                        data-title="PM Kaushal Vikas Yojana"
+                        data-category="Employment"
+                        data-description="Skill development and training initiative."
+                        data-coverage="All India">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 5 -->
+
+            <article
+                class="scheme-card"
+                data-category="housing"
+                data-state="central"
+                data-name="pradhan mantri awas yojana">
+
+                <div class="card-icon housing-icon">
+
+                    <i class="bi bi-house-heart-fill"></i>
+
+                </div>
+
+                <span class="category housing-category">
+                    Housing
+                </span>
+
+                <h3>
+                    Pradhan Mantri
+                    <br>
+                    Awas Yojana
+                </h3>
+
+                <p>
+                    Housing support initiative aimed at improving
+                    access to affordable housing.
+                </p>
+
+                <div class="scheme-details">
+
+                    <div>
+                        <i class="bi bi-building"></i>
+                        Government
+                    </div>
+
+                    <div>
+                        <i class="bi bi-geo-alt"></i>
+                        All India
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <span class="active">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Active Scheme
+
+                    </span>
+
+                    <button
+                        type="button"
+                        class="details-button"
+                        data-title="Pradhan Mantri Awas Yojana"
+                        data-category="Housing"
+                        data-description="Housing support initiative for eligible beneficiaries."
+                        data-coverage="All India">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 6 -->
+
+            <article
+                class="scheme-card"
+                data-category="women"
+                data-state="central"
+                data-name="beti bachao beti padhao">
+
+                <div class="card-icon women-icon">
+
+                    <i class="bi bi-gender-female"></i>
+
+                </div>
+
+                <span class="category women-category">
+                    Women & Child
+                </span>
+
+                <h3>
+                    Beti Bachao
+                    <br>
+                    Beti Padhao
+                </h3>
+
+                <p>
+                    Government initiative focused on awareness,
+                    education and welfare outcomes for girls.
+                </p>
+
+                <div class="scheme-details">
+
+                    <div>
+                        <i class="bi bi-building"></i>
+                        Central Government
+                    </div>
+
+                    <div>
+                        <i class="bi bi-geo-alt"></i>
+                        All India
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <span class="active">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Active Scheme
+
+                    </span>
+
+                    <button
+                        type="button"
+                        class="details-button"
+                        data-title="Beti Bachao Beti Padhao"
+                        data-category="Women & Child"
+                        data-description="Initiative focused on awareness, education and welfare outcomes for girls."
+                        data-coverage="All India">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+
+        <!-- NO RESULTS -->
+
+        <div class="no-results" id="noResults">
+
+            <i class="bi bi-search"></i>
+
+            <h3>
+                No Schemes Found
+            </h3>
+
+            <p>
+                Try changing your search or filter options.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta-section">
+
+    <div class="cta">
+
+        <div class="cta-icon">
+
+            <i class="bi bi-robot"></i>
+
+        </div>
+
+
+        <div class="cta-content">
+
+            <span>
+                AI POWERED RECOMMENDATION
+            </span>
+
+            <h2>
+                Not sure which scheme is right for you?
+            </h2>
+
+            <p>
+                Provide your profile information and let AI Welfare
+                identify potentially relevant government welfare schemes.
+            </p>
+
+        </div>
+
+
+        <a
+            href="eligibility.html"
+            class="cta-button">
+
+            Check My Eligibility
+
+            <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-top">
+
+            <div>
+
+                <a
+                    href="index.html"
+                    class="footer-logo">
+
+                    <i class="bi bi-cpu-fill"></i>
+
+                    AI Welfare
+
+                </a>
+
+                <p class="footer-text">
+                    AI-powered government welfare
+                    eligibility assistance.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="schemes.html">
+                    Schemes
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 AI Welfare. All rights reserved.
+            </span>
+
+            <span>
+                Smart • Secure • Accessible
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div class="modal" id="schemeModal">
+
+    <div
+        class="modal-overlay"
+        id="modalOverlay">
+    </div>
+
+
+    <div class="modal-box">
+
+        <button
+            type="button"
+            class="close-modal"
+            id="closeModal"
+            aria-label="Close">
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+
+        <div class="modal-icon">
+
+            <i class="bi bi-stars"></i>
+
+        </div>
+
+
+        <h2 id="modalTitle">
+            Scheme Details
+        </h2>
+
+
+        <p id="modalDescription">
+            Scheme information.
+        </p>
+
+
+        <div class="modal-info">
+
+            <div class="modal-info-item">
+
+                <span>
+                    Category
+                </span>
+
+                <strong id="modalCategory">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="modal-info-item">
+
+                <span>
+                    Coverage
+                </span>
+
+                <strong id="modalCoverage">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="eligibility.html"
+            class="modal-eligibility">
+
+            Check My Eligibility
+
+            <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* ================================================
+           MOBILE MENU
+        ================================================= */
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        const navMenu =
+            document.getElementById("navMenu");
+
+        if (mobileMenu && navMenu) {
+
+            mobileMenu.addEventListener("click", function () {
+
+                navMenu.classList.toggle("show");
+
+            });
+
+        }
+
+
+        /* ================================================
+           FILTER ELEMENTS
+        ================================================= */
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const categoryFilter =
+            document.getElementById("categoryFilter");
+
+        const stateFilter =
+            document.getElementById("stateFilter");
+
+        const resetButton =
+            document.getElementById("resetButton");
+
+        const schemeCount =
+            document.getElementById("schemeCount");
+
+        const noResults =
+            document.getElementById("noResults");
+
+        const cards =
+            document.querySelectorAll(".scheme-card");
+
+
+        /* ================================================
+           FILTER FUNCTION
+        ================================================= */
+
+        function filterSchemes() {
+
+            const search =
+                searchInput.value
+                    .toLowerCase()
+                    .trim();
+
+            const category =
+                categoryFilter.value;
+
+            const state =
+                stateFilter.value;
+
+            let count = 0;
+
+
+            cards.forEach(function (card) {
+
+                const name =
+                    card.dataset.name
+                        .toLowerCase();
+
+                const cardCategory =
+                    card.dataset.category;
+
+                const cardState =
+                    card.dataset.state;
+
+
+                const searchMatch =
+                    name.includes(search);
+
+
+                const categoryMatch =
+                    category === "all" ||
+                    category === cardCategory;
+
+
+                const stateMatch =
+                    state === "all" ||
+                    state === cardState;
+
+
+                if (
+                    searchMatch &&
+                    categoryMatch &&
+                    stateMatch
+                ) {
+
+                    card.style.display = "";
+
+                    count++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            schemeCount.textContent = count;
+
+
+            if (count === 0) {
+
+                noResults.style.display = "block";
+
+            } else {
+
+                noResults.style.display = "none";
+
+            }
+
+        }
+
+
+        /* ================================================
+           SEARCH
+        ================================================= */
+
+        searchInput.addEventListener(
+            "input",
+            filterSchemes
+        );
+
+
+        /* ================================================
+           CATEGORY
+        ================================================= */
+
+        categoryFilter.addEventListener(
+            "change",
+            filterSchemes
+        );
+
+
+        /* ================================================
+           STATE
+        ================================================= */
+
+        stateFilter.addEventListener(
+            "change",
+            filterSchemes
+        );
+
+
+        /* ================================================
+           RESET
+        ================================================= */
+
+        resetButton.addEventListener(
+            "click",
+            function () {
+
+                searchInput.value = "";
+
+                categoryFilter.value = "all";
+
+                stateFilter.value = "all";
+
+                filterSchemes();
+
+            }
+        );
+
+
+        /* ================================================
+           MODAL
+        ================================================= */
+
+        const modal =
+            document.getElementById("schemeModal");
+
+        const modalOverlay =
+            document.getElementById("modalOverlay");
+
+        const closeModal =
+            document.getElementById("closeModal");
+
+        const modalTitle =
+            document.getElementById("modalTitle");
+
+        const modalDescription =
+            document.getElementById("modalDescription");
+
+        const modalCategory =
+            document.getElementById("modalCategory");
+
+        const modalCoverage =
+            document.getElementById("modalCoverage");
+
+
+        const detailButtons =
+            document.querySelectorAll(".details-button");
+
+
+        detailButtons.forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    modalTitle.textContent =
+                        button.dataset.title;
+
+                    modalDescription.textContent =
+                        button.dataset.description;
+
+                    modalCategory.textContent =
+                        button.dataset.category;
+
+                    modalCoverage.textContent =
+                        button.dataset.coverage;
+
+                    modal.classList.add("show");
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+            );
+
+        });
+
+
+        /* ================================================
+           CLOSE MODAL
+        ================================================= */
+
+        function closeSchemeModal() {
+
+            modal.classList.remove("show");
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        closeModal.addEventListener(
+            "click",
+            closeSchemeModal
+        );
+
+
+        modalOverlay.addEventListener(
+            "click",
+            closeSchemeModal
+        );
+
+
+        /* ================================================
+           ESCAPE KEY
+        ================================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    closeSchemeModal();
+
+                }
+
+            }
+        );
+
+
+        /* ================================================
+           INITIAL COUNT
+        ================================================= */
+
+        filterSchemes();
+
+
+        console.log(
+            "AI Welfare Schemes Page Loaded Successfully"
+        );
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

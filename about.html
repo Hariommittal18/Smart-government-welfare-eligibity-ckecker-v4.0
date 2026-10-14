@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | AI Welfare</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+
+    <style>
+
+        /* =====================================================
+           ABOUT PAGE
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family: 'Poppins', sans-serif;
+
+            background: #f8fafc;
+
+            color: #1e293b;
+
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .about-navbar {
+
+            width: 100%;
+
+            background: #2563eb;
+
+            padding: 17px 0;
+
+            box-shadow:
+                0 8px 25px rgba(15, 23, 42, 0.15);
+
+        }
+
+
+        .about-brand {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 27px;
+
+            font-weight: 700;
+
+        }
+
+
+        .about-brand i {
+
+            color: #ffd43b;
+
+            margin-right: 8px;
+
+        }
+
+
+        .about-nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 23px;
+
+        }
+
+
+        .about-nav a {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+
+        }
+
+
+        .about-nav a:hover,
+
+        .about-nav a.active {
+
+            color: #ffd43b;
+
+        }
+
+
+        .about-login {
+
+            background: #ffffff;
+
+            color: #2563eb !important;
+
+            padding: 8px 18px;
+
+            border-radius: 22px;
+
+            font-weight: 600 !important;
+
+        }
+
+
+        .about-login:hover {
+
+            background: #ffd43b;
+
+            color: #111827 !important;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .about-hero {
+
+            padding: 70px 15px 60px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #ffffff
+                );
+
+        }
+
+
+        .about-hero-content {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+        }
+
+
+        .about-badge {
+
+            display: inline-block;
+
+            background: #ffd43b;
+
+            color: #111827;
+
+            padding: 8px 18px;
+
+            border-radius: 30px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .about-hero h1 {
+
+            color: #0f172a;
+
+            font-size: 48px;
+
+            font-weight: 700;
+
+            line-height: 1.2;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .about-hero h1 span {
+
+            color: #2563eb;
+
+        }
+
+
+        .about-hero p {
+
+            max-width: 720px;
+
+            color: #64748b;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .about-hero-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+        }
+
+
+        .about-primary-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 12px 22px;
+
+            border-radius: 10px;
+
+            background: #2563eb;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+
+        }
+
+
+        .about-primary-btn:hover {
+
+            background: #1d4ed8;
+
+            color: #ffffff;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .about-secondary-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 12px 22px;
+
+            border-radius: 10px;
+
+            border: 1px solid #cbd5e1;
+
+            background: #ffffff;
+
+            color: #334155;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+
+        }
+
+
+        .about-secondary-btn:hover {
+
+            border-color: #2563eb;
+
+            color: #2563eb;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* Hero Visual */
+
+        .about-hero-visual {
+
+            min-height: 330px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+        }
+
+
+        .hero-ai-card {
+
+            width: 270px;
+
+            height: 270px;
+
+            border-radius: 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0f172a,
+                    #1d4ed8,
+                    #3b82f6
+                );
+
+            color: #ffffff;
+
+            box-shadow:
+                0 25px 55px rgba(37,99,235,0.25);
+
+            position: relative;
+
+            animation: aboutFloat 4s ease-in-out infinite;
+
+        }
+
+
+        .hero-ai-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+
+            height: 180px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+        }
+
+
+        .hero-ai-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+
+            height: 130px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+        }
+
+
+        .hero-ai-card i {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 85px;
+
+            color: #ffd43b;
+
+        }
+
+
+        .floating-stat {
+
+            position: absolute;
+
+            padding: 12px 17px;
+
+            border-radius: 13px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 12px 30px rgba(15,23,42,0.12);
+
+            z-index: 3;
+
+        }
+
+
+        .floating-stat strong {
+
+            display: block;
+
+            color: #2563eb;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+        }
+
+
+        .floating-stat span {
+
+            color: #64748b;
+
+            font-size: 9px;
+
+        }
+
+
+        .floating-stat.one {
+
+            top: 20px;
+
+            right: 20px;
+
+        }
+
+
+        .floating-stat.two {
+
+            bottom: 25px;
+
+            left: 15px;
+
+        }
+
+
+        @keyframes aboutFloat {
+
+            0% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-12px);
+
+            }
+
+            100% {
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           MISSION SECTION
+        ===================================================== */
+
+        .mission-section {
+
+            padding: 80px 15px;
+
+            background: #ffffff;
+
+        }
+
+
+        .mission-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+        }
+
+
+        .section-label {
+
+            color: #2563eb;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .section-title {
+
+            color: #1e293b;
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            margin: 8px 0 13px;
+
+        }
+
+
+        .section-description {
+
+            color: #64748b;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+            max-width: 680px;
+
+        }
+
+
+        .mission-card {
+
+            height: 100%;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e2e8f0;
+
+            transition: 0.3s;
+
+        }
+
+
+        .mission-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(15,23,42,0.08);
+
+        }
+
+
+        .mission-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background: #dbeafe;
+
+            color: #2563eb;
+
+            font-size: 24px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .mission-card h3 {
+
+            color: #1e293b;
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .mission-card p {
+
+            color: #64748b;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+            margin: 0;
+
+        }
+
+
+        /* =====================================================
+           HOW IT WORKS
+        ===================================================== */
+
+        .process-section {
+
+            padding: 80px 15px;
+
+            background: #f8fafc;
+
+        }
+
+
+        .process-heading {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .process-heading .section-description {
+
+            margin: auto;
+
+        }
+
+
+        .process-card {
+
+            height: 100%;
+
+            position: relative;
+
+            padding: 28px 23px;
+
+            background: #ffffff;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            transition: 0.3s;
+
+        }
+
+
+        .process-card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 35px rgba(15,23,42,0.08);
+
+        }
+
+
+        .process-number {
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 15px;
+
+            width: 28px;
+
+            height: 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+        }
+
+
+        .process-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: auto auto 20px;
+
+            border-radius: 18px;
+
+            background: #2563eb;
+
+            color: #ffffff;
+
+            font-size: 27px;
+
+        }
+
+
+        .process-card h4 {
+
+            color: #1e293b;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .process-card p {
+
+            color: #64748b;
+
+            font-size: 10px;
+
+            line-height: 1.7;
+
+            margin: 0;
+
+        }
+
+
+        /* =====================================================
+           FEATURES
+        ===================================================== */
+
+        .features-section {
+
+            padding: 80px 15px;
+
+            background: #ffffff;
+
+        }
+
+
+        .feature-box {
+
+            display: flex;
+
+            gap: 14px;
+
+            padding: 20px;
+
+            height: 100%;
+
+            border-radius: 15px;
+
+            border: 1px solid #e2e8f0;
+
+            background: #ffffff;
+
+            transition: 0.3s;
+
+        }
+
+
+        .feature-box:hover {
+
+            border-color: #bfdbfe;
+
+            box-shadow:
+                0 12px 30px rgba(37,99,235,0.08);
+
+        }
+
+
+        .feature-box-icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            min-width: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-size: 20px;
+
+        }
+
+
+        .feature-box h5 {
+
+            color: #1e293b;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin: 0 0 5px;
+
+        }
+
+
+        .feature-box p {
+
+            color: #64748b;
+
+            font-size: 10px;
+
+            line-height: 1.6;
+
+            margin: 0;
+
+        }
+
+
+        /* =====================================================
+           STATS
+        ===================================================== */
+
+        .stats-section {
+
+            padding: 65px 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1d4ed8
+                );
+
+            color: #ffffff;
+
+        }
+
+
+        .about-stat {
+
+            text-align: center;
+
+            padding: 15px;
+
+        }
+
+
+        .about-stat i {
+
+            color: #ffd43b;
+
+            font-size: 27px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .about-stat h3 {
+
+            color: #ffffff;
+
+            font-size: 29px;
+
+            font-weight: 700;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .about-stat p {
+
+            color: #bfdbfe;
+
+            font-size: 10px;
+
+            margin: 0;
+
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .about-cta {
+
+            padding: 75px 15px;
+
+            background: #f8fafc;
+
+            text-align: center;
+
+        }
+
+
+        .cta-container {
+
+            max-width: 850px;
+
+            margin: auto;
+
+        }
+
+
+        .about-cta h2 {
+
+            color: #0f172a;
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .about-cta p {
+
+            color: #64748b;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .cta-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .about-footer {
+
+            padding: 28px 15px;
+
+            background: #0f172a;
+
+            color: #94a3b8;
+
+            text-align: center;
+
+            font-size: 10px;
+
+        }
+
+
+        .about-footer strong {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .about-nav {
+
+                display: none;
+
+            }
+
+
+            .about-hero {
+
+                text-align: center;
+
+            }
+
+
+            .about-hero p {
+
+                margin-left: auto;
+
+                margin-right: auto;
+
+            }
+
+
+            .about-hero-buttons {
+
+                justify-content: center;
+
+            }
+
+
+            .about-hero-visual {
+
+                margin-top: 40px;
+
+            }
+
+        }
+
+
+        @media (max-width: 576px) {
+
+            .about-brand {
+
+                font-size: 22px;
+
+            }
+
+
+            .about-hero {
+
+                padding-top: 50px;
+
+            }
+
+
+            .about-hero h1 {
+
+                font-size: 34px;
+
+            }
+
+
+            .hero-ai-card {
+
+                width: 220px;
+
+                height: 220px;
+
+            }
+
+
+            .hero-ai-card i {
+
+                font-size: 65px;
+
+            }
+
+
+            .floating-stat.one {
+
+                right: 0;
+
+            }
+
+
+            .floating-stat.two {
+
+                left: 0;
+
+            }
+
+
+            .section-title {
+
+                font-size: 28px;
+
+            }
+
+
+            .about-cta h2 {
+
+                font-size: 28px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<nav class="about-navbar">
+
+    <div class="container">
+
+        <div
+            class="d-flex align-items-center justify-content-between">
+
+
+            <a
+                href="index.html"
+                class="about-brand">
+
+                <i class="bi bi-cpu-fill"></i>
+
+                AI Welfare
+
+            </a>
+
+
+            <div class="about-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="schemes.html">
+                    Schemes
+                </a>
+
+                <a
+                    href="about.html"
+                    class="active">
+
+                    About
+
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a
+                    href="login.html"
+                    class="about-login">
+
+                    Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="about-hero">
+
+    <div class="about-hero-content">
+
+        <div class="row align-items-center">
+
+
+            <!-- LEFT -->
+
+            <div class="col-lg-7">
+
+
+                <span class="about-badge">
+
+                    <i class="bi bi-stars me-1"></i>
+
+                    ABOUT AI WELFARE
+
+                </span>
+
+
+                <h1>
+
+                    Making Government Welfare
+                    <span>More Accessible</span>
+
+                </h1>
+
+
+                <p>
+
+                    AI Welfare is a digital platform concept designed
+                    to simplify the way citizens discover government
+                    welfare schemes and understand their potential
+                    eligibility through an intelligent and
+                    user-friendly interface.
+
+                </p>
+
+
+                <div class="about-hero-buttons">
+
+
+                    <a
+                        href="eligibility.html"
+                        class="about-primary-btn">
+
+                        <i class="bi bi-stars"></i>
+
+                        Check Eligibility
+
+                    </a>
+
+
+                    <a
+                        href="schemes.html"
+                        class="about-secondary-btn">
+
+                        <i class="bi bi-grid-3x3-gap"></i>
+
+                        Explore Schemes
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <div class="col-lg-5">
+
+
+                <div class="about-hero-visual">
+
+
+                    <div class="hero-ai-card">
+
+                        <i class="bi bi-robot"></i>
+
+                    </div>
+
+
+                    <div class="floating-stat one">
+
+                        <strong>
+                            AI
+                        </strong>
+
+                        <span>
+                            Smart Analysis
+                        </span>
+
+                    </div>
+
+
+                    <div class="floating-stat two">
+
+                        <strong>
+                            500+
+                        </strong>
+
+                        <span>
+                            Scheme Concept
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MISSION
+====================================================== -->
+
+<section class="mission-section">
+
+    <div class="mission-container">
+
+
+        <div class="mb-4">
+
+            <span class="section-label">
+                OUR PURPOSE
+            </span>
+
+            <h2 class="section-title">
+                Our Mission
+            </h2>
+
+            <p class="section-description">
+
+                The goal of AI Welfare is to create a simple digital
+                experience where citizens can discover relevant
+                welfare information without having to navigate
+                through multiple complicated sources.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- Mission -->
+
+            <div class="col-md-6">
+
+                <div class="mission-card">
+
+
+                    <div class="mission-icon">
+
+                        <i class="bi bi-bullseye"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Our Mission
+                    </h3>
+
+
+                    <p>
+
+                        Build an accessible and intelligent platform
+                        that helps citizens understand welfare
+                        opportunities using structured information,
+                        eligibility inputs and AI-assisted analysis.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Vision -->
+
+            <div class="col-md-6">
+
+                <div class="mission-card">
+
+
+                    <div class="mission-icon">
+
+                        <i class="bi bi-eye"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Our Vision
+                    </h3>
+
+
+                    <p>
+
+                        Create a future where discovering government
+                        welfare programmes is simple, transparent and
+                        accessible through a modern digital platform.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+====================================================== -->
+
+<section class="process-section">
+
+    <div class="container">
+
+
+        <div class="process-heading">
+
+
+            <span class="section-label">
+                HOW IT WORKS
+            </span>
+
+
+            <h2 class="section-title">
+                From Profile to Recommendation
+            </h2>
+
+
+            <p class="section-description">
+
+                The platform is designed around a simple workflow
+                that can later be connected to the backend AI
+                eligibility engine.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- Step 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="process-card">
+
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-person-lines-fill"></i>
+
+                    </div>
+
+
+                    <h4>
+                        Create Profile
+                    </h4>
+
+
+                    <p>
+
+                        Create an account and provide basic
+                        information about yourself.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="process-card">
+
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-ui-checks"></i>
+
+                    </div>
+
+
+                    <h4>
+                        Enter Details
+                    </h4>
+
+
+                    <p>
+
+                        Provide information such as age, income,
+                        occupation and household details.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 3 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="process-card">
+
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-cpu"></i>
+
+                    </div>
+
+
+                    <h4>
+                        AI Analysis
+                    </h4>
+
+
+                    <p>
+
+                        The future backend engine can analyse the
+                        profile against scheme eligibility rules.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 4 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="process-card">
+
+
+                    <div class="process-number">
+                        04
+                    </div>
+
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-check2-circle"></i>
+
+                    </div>
+
+
+                    <h4>
+                        View Results
+                    </h4>
+
+
+                    <p>
+
+                        Citizens can view potentially relevant
+                        schemes and eligibility information.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURES
+====================================================== -->
+
+<section class="features-section">
+
+    <div class="container">
+
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                PLATFORM FEATURES
+            </span>
+
+
+            <h2 class="section-title">
+                Built Around Citizens
+            </h2>
+
+
+            <p class="section-description mx-auto">
+
+                The frontend is designed to provide a clear,
+                responsive and easy-to-use experience.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-3">
+
+
+            <!-- Feature 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-box">
+
+
+                    <div class="feature-box-icon">
+
+                        <i class="bi bi-robot"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h5>
+                            AI Assisted Recommendations
+                        </h5>
+
+
+                        <p>
+
+                            Designed to help identify potentially
+                            relevant welfare programmes from user
+                            profile information.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Feature 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-box">
+
+
+                    <div class="feature-box-icon">
+
+                        <i class="bi bi-search"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h5>
+                            Easy Scheme Discovery
+                        </h5>
+
+
+                        <p>
+
+                            Browse welfare programmes through a
+                            structured and user-friendly interface.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Feature 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-box">
+
+
+                    <div class="feature-box-icon">
+
+                        <i class="bi bi-phone"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h5>
+                            Responsive Design
+                        </h5>
+
+
+                        <p>
+
+                            The interface is designed to work across
+                            desktop, tablet and mobile screens.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Feature 4 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-box">
+
+
+                    <div class="feature-box-icon">
+
+                        <i class="bi bi-shield-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h5>
+                            Security Focus
+                        </h5>
+
+
+                        <p>
+
+                            The project architecture can later include
+                            secure authentication and protected APIs.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Feature 5 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-box">
+
+
+                    <div class="feature-box-icon">
+
+                        <i class="bi bi-speedometer2"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h5>
+                            Fast User Experience
+                        </h5>
+
+
+                        <p>
+
+                            Clean navigation and structured pages
+                            make important information easier to find.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Feature 6 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-box">
+
+
+                    <div class="feature-box-icon">
+
+                        <i class="bi bi-database-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h5>
+                            Data Driven Platform
+                        </h5>
+
+
+                        <p>
+
+                            The future backend can manage scheme
+                            information and eligibility rules centrally.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+====================================================== -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+
+        <div class="row g-4">
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="about-stat">
+
+                    <i class="bi bi-grid-3x3-gap"></i>
+
+                    <h3>
+                        500+
+                    </h3>
+
+                    <p>
+                        Scheme Concept
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="about-stat">
+
+                    <i class="bi bi-cpu"></i>
+
+                    <h3>
+                        AI
+                    </h3>
+
+                    <p>
+                        Assisted Analysis
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="about-stat">
+
+                    <i class="bi bi-phone"></i>
+
+                    <h3>
+                        100%
+                    </h3>
+
+                    <p>
+                        Responsive UI
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="about-stat">
+
+                    <i class="bi bi-lightning-charge"></i>
+
+                    <h3>
+                        Fast
+                    </h3>
+
+                    <p>
+                        User Experience
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="about-cta">
+
+    <div class="cta-container">
+
+
+        <span class="section-label">
+
+            GET STARTED
+
+        </span>
+
+
+        <h2>
+
+            Ready to Explore Welfare Schemes?
+
+        </h2>
+
+
+        <p>
+
+            Start by checking your profile eligibility or explore
+            the welfare schemes available through the platform.
+
+        </p>
+
+
+        <div class="cta-buttons">
+
+
+            <a
+                href="eligibility.html"
+                class="about-primary-btn">
+
+                <i class="bi bi-stars"></i>
+
+                Check Eligibility
+
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="about-secondary-btn">
+
+                <i class="bi bi-chat-dots"></i>
+
+                Contact Us
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="about-footer">
+
+    <div class="container">
+
+        <strong>
+            AI Welfare
+        </strong>
+
+        &nbsp; | &nbsp;
+
+        AI Government Welfare Eligibility Checker
+
+        <br>
+
+        <span>
+            © 2026 AI Welfare. Frontend Development Phase.
+        </span>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

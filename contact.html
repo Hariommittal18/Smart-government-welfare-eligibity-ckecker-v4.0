@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Contact AI Welfare - Smart Government Welfare Eligibility Checker">
+
+    <meta name="author"
+          content="AI Welfare">
+
+    <title>Contact | AI Welfare</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <!-- =====================================================
+         CONTACT PAGE CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f5f8fc;
+            color: #14213d;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        .contact-navbar {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e7edf5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .contact-nav-container {
+            width: min(1180px, 92%);
+            margin: auto;
+            min-height: 82px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .contact-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #17233f;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .contact-logo-icon {
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #2563eb;
+            color: #ffd43b;
+
+            border-radius: 12px;
+
+            font-size: 22px;
+        }
+
+        .contact-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-nav a {
+            padding: 11px 18px;
+
+            color: #334155;
+            font-size: 15px;
+            font-weight: 600;
+
+            border-radius: 9px;
+
+            transition: 0.25s ease;
+        }
+
+        .contact-nav a:hover {
+            color: #2563eb;
+            background: #eff6ff;
+        }
+
+        .contact-nav a.active {
+            color: #2563eb;
+            background: #eff6ff;
+        }
+
+        .contact-login {
+            margin-left: 8px;
+
+            background: #2563eb !important;
+            color: #ffffff !important;
+
+            padding: 12px 25px !important;
+            border-radius: 25px !important;
+        }
+
+        .contact-login:hover {
+            background: #1d4ed8 !important;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .contact-hero {
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(37, 99, 235, 0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(59, 130, 246, 0.12),
+                    transparent 28%
+                ),
+                #f8fbff;
+
+            padding: 90px 20px 75px;
+
+            text-align: center;
+        }
+
+        .contact-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 15px;
+
+            background: #eaf2ff;
+            color: #2563eb;
+
+            border: 1px solid #d7e6ff;
+            border-radius: 30px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 0.8px;
+        }
+
+        .contact-hero h1 {
+            margin-top: 20px;
+
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.08;
+
+            font-weight: 800;
+            letter-spacing: -2px;
+
+            color: #111c35;
+        }
+
+        .contact-hero h1 span {
+            color: #2563eb;
+        }
+
+        .contact-hero p {
+            max-width: 720px;
+            margin: 22px auto 0;
+
+            color: #64748b;
+
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           MAIN CONTACT AREA
+        ====================================================== */
+
+        .contact-main {
+            width: min(1180px, 92%);
+            margin: -25px auto 80px;
+
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+
+            background: #ffffff;
+
+            border: 1px solid #e4ebf4;
+            border-radius: 26px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 70px rgba(15, 23, 42, 0.10);
+        }
+
+
+        /* =====================================================
+           LEFT PANEL
+        ====================================================== */
+
+        .contact-left {
+            position: relative;
+
+            padding: 55px 48px;
+
+            background:
+                radial-gradient(
+                    circle at 100% 0%,
+                    rgba(59, 130, 246, 0.28),
+                    transparent 32%
+                ),
+                linear-gradient(
+                    145deg,
+                    #0f1b3a,
+                    #173b87 55%,
+                    #2563eb
+                );
+
+            color: #ffffff;
+
+            overflow: hidden;
+        }
+
+        .contact-left::after {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            right: -120px;
+            bottom: -120px;
+
+            background: rgba(255,255,255,0.08);
+        }
+
+        .contact-left-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255,255,255,0.12);
+
+            border: 1px solid rgba(255,255,255,0.18);
+
+            border-radius: 17px;
+
+            color: #ffd43b;
+
+            font-size: 28px;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-left h2 {
+            font-size: 38px;
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+
+            font-weight: 800;
+        }
+
+        .contact-left > p {
+            color: #dbeafe;
+
+            font-size: 15px;
+            line-height: 1.8;
+
+            margin-bottom: 38px;
+        }
+
+
+        /* =====================================================
+           INFORMATION ITEMS
+        ====================================================== */
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item-icon {
+            width: 46px;
+            min-width: 46px;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255,255,255,0.11);
+
+            border: 1px solid rgba(255,255,255,0.13);
+
+            border-radius: 12px;
+
+            color: #ffd43b;
+
+            font-size: 19px;
+        }
+
+        .contact-item-content h4 {
+            margin-bottom: 4px;
+
+            color: #ffffff;
+
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .contact-item-content p,
+        .contact-item-content a {
+            color: #dbeafe;
+
+            font-size: 13px;
+            line-height: 1.7;
+
+            word-break: break-word;
+        }
+
+        .contact-item-content a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           RIGHT FORM
+        ====================================================== */
+
+        .contact-right {
+            padding: 55px 52px;
+            background: #ffffff;
+        }
+
+        .form-top-label {
+            color: #2563eb;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1.2px;
+        }
+
+        .contact-right h2 {
+            margin-top: 8px;
+
+            color: #111c35;
+
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .contact-right .form-description {
+            margin-top: 8px;
+            margin-bottom: 30px;
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           FORM
+        ====================================================== */
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            color: #1e293b;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .form-group label span {
+            color: #ef4444;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box i {
+            position: absolute;
+
+            left: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #64748b;
+
+            font-size: 16px;
+
+            pointer-events: none;
+        }
+
+        .input-box input,
+        .input-box select,
+        .input-box textarea {
+            width: 100%;
+
+            border: 1px solid #dbe3ee;
+            border-radius: 12px;
+
+            background: #f9fbfd;
+
+            color: #17233f;
+
+            font-family: inherit;
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.25s ease;
+        }
+
+        .input-box input,
+        .input-box select {
+            height: 50px;
+            padding: 0 15px 0 45px;
+        }
+
+        .input-box textarea {
+            min-height: 145px;
+
+            resize: vertical;
+
+            padding: 15px 15px 15px 45px;
+        }
+
+        .input-box input:focus,
+        .input-box select:focus,
+        .input-box textarea:focus {
+            background: #ffffff;
+
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 4px rgba(37,99,235,0.10);
+        }
+
+        .textarea-icon {
+            top: 20px !important;
+            transform: none !important;
+        }
+
+
+        /* =====================================================
+           SUBMIT BUTTON
+        ====================================================== */
+
+        .contact-submit {
+            width: 100%;
+
+            height: 54px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #2563eb;
+            color: #ffffff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            font-family: inherit;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .contact-submit:hover {
+            background: #1d4ed8;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(37,99,235,0.25);
+        }
+
+        .contact-submit:active {
+            transform: translateY(0);
+        }
+
+        .privacy-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+
+            color: #94a3b8;
+
+            font-size: 11px;
+        }
+
+        .privacy-note i {
+            color: #2563eb;
+        }
+
+
+        /* =====================================================
+           QUICK HELP
+        ====================================================== */
+
+        .quick-help {
+            width: min(1180px, 92%);
+            margin: 0 auto 80px;
+        }
+
+        .quick-help-header {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        .quick-help-header h2 {
+            margin-top: 12px;
+
+            color: #111c35;
+
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .quick-help-header p {
+            margin-top: 7px;
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+        .help-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .help-card {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+
+            padding: 25px;
+
+            background: #ffffff;
+
+            border: 1px solid #e3eaf3;
+
+            border-radius: 17px;
+
+            color: #17233f;
+
+            transition: 0.25s ease;
+        }
+
+        .help-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #bfdbfe;
+
+            box-shadow:
+                0 15px 35px rgba(15,23,42,0.08);
+        }
+
+        .help-icon {
+            width: 48px;
+            min-width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-size: 20px;
+        }
+
+        .help-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .help-card p {
+            margin-top: 3px;
+
+            color: #64748b;
+
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .help-arrow {
+            margin-left: auto;
+
+            color: #94a3b8;
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .contact-footer {
+            background: #0d172c;
+            color: #cbd5e1;
+        }
+
+        .footer-container {
+            width: min(1180px, 92%);
+            margin: auto;
+
+            padding: 55px 0;
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1fr 1fr 1.3fr;
+
+            gap: 45px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            color: #ffffff;
+
+            font-size: 21px;
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #2563eb;
+
+            color: #ffd43b;
+
+            border-radius: 11px;
+        }
+
+        .footer-description {
+            max-width: 280px;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 18px;
+
+            color: #ffffff;
+
+            font-size: 14px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+
+            transition: 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+            transform: translateX(3px);
+        }
+
+        .footer-column a i {
+            margin-right: 7px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+
+            padding: 18px 20px;
+
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 11px;
+        }
+
+        .footer-bottom strong {
+            color: #ffffff;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 950px) {
+
+            .contact-nav {
+                gap: 2px;
+            }
+
+            .contact-nav a {
+                padding: 9px 10px;
+                font-size: 13px;
+            }
+
+            .contact-main {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-left {
+                padding: 45px 35px;
+            }
+
+            .contact-right {
+                padding: 45px 35px;
+            }
+
+            .footer-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .contact-nav-container {
+                min-height: 70px;
+            }
+
+            .contact-logo {
+                font-size: 20px;
+            }
+
+            .contact-logo-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .contact-nav {
+                display: none;
+            }
+
+            .contact-hero {
+                padding: 65px 18px 60px;
+            }
+
+            .contact-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .contact-hero p {
+                font-size: 14px;
+            }
+
+            .contact-main {
+                width: 94%;
+
+                margin-top: -15px;
+
+                border-radius: 20px;
+            }
+
+            .contact-left,
+            .contact-right {
+                padding: 35px 25px;
+            }
+
+            .contact-left h2 {
+                font-size: 30px;
+            }
+
+            .contact-right h2 {
+                font-size: 27px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .contact-hero h1 {
+                font-size: 40px;
+            }
+
+            .contact-left {
+                padding: 30px 20px;
+            }
+
+            .contact-right {
+                padding: 30px 20px;
+            }
+
+            .contact-main {
+                width: 96%;
+            }
+
+            .help-card {
+                padding: 19px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="contact-navbar">
+
+        <div class="contact-nav-container">
+
+            <a href="index.html"
+               class="contact-logo">
+
+                <span class="contact-logo-icon">
+                    <i class="bi bi-cpu-fill"></i>
+                </span>
+
+                <span>
+                    AI Welfare
+                </span>
+
+            </a>
+
+
+            <nav class="contact-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="schemes.html">
+                    Schemes
+                </a>
+
+                <a href="eligibility.html">
+                    Eligibility
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html"
+                   class="active">
+                    Contact
+                </a>
+
+                <a href="login.html"
+                   class="contact-login">
+                    Login
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="contact-hero">
+
+        <div>
+
+            <span class="contact-badge">
+
+                <i class="bi bi-chat-dots-fill"></i>
+
+                SUPPORT CENTER
+
+            </span>
+
+
+            <h1>
+
+                Let's
+                <span>Connect.</span>
+
+            </h1>
+
+
+            <p>
+
+                Have questions about welfare schemes,
+                eligibility or our platform?
+                We're here to help you find the right information.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT MAIN
+    ====================================================== -->
+
+    <section class="contact-main">
+
+
+        <!-- =================================================
+             LEFT
+        ================================================== -->
+
+        <div class="contact-left">
+
+            <div class="contact-left-icon">
+
+                <i class="bi bi-chat-square-dots-fill"></i>
+
+            </div>
+
+
+            <h2>
+                Get in Touch
+            </h2>
+
+
+            <p>
+
+                Our support section is designed to help
+                users understand the platform and navigate
+                welfare scheme information more easily.
+
+            </p>
+
+
+            <div class="contact-info">
+
+
+                <!-- EMAIL -->
+
+                <div class="contact-item">
+
+                    <div class="contact-item-icon">
+
+                        <i class="bi bi-envelope"></i>
+
+                    </div>
+
+
+                    <div class="contact-item-content">
+
+                        <h4>
+                            Email Support
+                        </h4>
+
+                        <a href="mailto:mittalhariom2025@gmail.com">
+
+                            mittalhariom2025@gmail.com
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="contact-item">
+
+                    <div class="contact-item-icon">
+
+                        <i class="bi bi-telephone"></i>
+
+                    </div>
+
+
+                    <div class="contact-item-content">
+
+                        <h4>
+                            Support Helpline
+                        </h4>
+
+
+                        <a href="tel:+918630366441">
+                            +91 8630366441
+                        </a>
+
+                        <br>
+
+                        <a href="tel:+918707645759">
+                            +91 8707645759
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HOURS -->
+
+                <div class="contact-item">
+
+                    <div class="contact-item-icon">
+
+                        <i class="bi bi-clock"></i>
+
+                    </div>
+
+
+                    <div class="contact-item-content">
+
+                        <h4>
+                            Support Hours
+                        </h4>
+
+                        <p>
+                            Monday – Friday
+                            <br>
+                            9:00 AM – 6:00 PM
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SERVICE -->
+
+                <div class="contact-item">
+
+                    <div class="contact-item-icon">
+
+                        <i class="bi bi-globe2"></i>
+
+                    </div>
+
+
+                    <div class="contact-item-content">
+
+                        <h4>
+                            Service
+                        </h4>
+
+                        <p>
+                            Digital Government
+                            Welfare Information Platform
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RIGHT FORM
+        ================================================== -->
+
+        <div class="contact-right">
+
+
+            <span class="form-top-label">
+                SEND A MESSAGE
+            </span>
+
+
+            <h2>
+                How can we help?
+            </h2>
+
+
+            <p class="form-description">
+
+                Fill in the details below and tell us
+                what you need help with.
+
+            </p>
+
+
+            <form class="contact-form"
+                  id="contactForm">
+
+
+                <!-- NAME + EMAIL -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                            <span>*</span>
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="bi bi-person"></i>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                            <span>*</span>
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="bi bi-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <i class="bi bi-list"></i>
+
+                        <select
+                            id="subject"
+                            name="subject"
+                        >
+
+                            <option value="">
+                                Select a subject
+                            </option>
+
+                            <option value="eligibility">
+                                Eligibility Support
+                            </option>
+
+                            <option value="scheme">
+                                Welfare Scheme Information
+                            </option>
+
+                            <option value="account">
+                                Account Support
+                            </option>
+
+                            <option value="technical">
+                                Technical Issue
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                        <span>*</span>
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <i class="bi bi-pencil-square textarea-icon"></i>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="contact-submit"
+                >
+
+                    <span>
+                        Send Message
+                    </span>
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </button>
+
+
+                <p class="privacy-note">
+
+                    <i class="bi bi-shield-lock-fill"></i>
+
+                    Your information is handled securely.
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUICK HELP
+    ====================================================== -->
+
+    <section class="quick-help">
+
+        <div class="quick-help-header">
+
+            <span class="contact-badge">
+
+                <i class="bi bi-lightning-charge-fill"></i>
+
+                QUICK HELP
+
+            </span>
+
+
+            <h2>
+                Explore AI Welfare
+            </h2>
+
+
+            <p>
+                Quickly access the most useful sections.
+            </p>
+
+        </div>
+
+
+        <div class="help-grid">
+
+
+            <!-- ELIGIBILITY -->
+
+            <a href="eligibility.html"
+               class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="bi bi-person-check-fill"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Check Eligibility
+                    </h3>
+
+                    <p>
+                        Find schemes that may match your profile.
+                    </p>
+
+                </div>
+
+
+                <i class="bi bi-arrow-up-right help-arrow"></i>
+
+            </a>
+
+
+
+            <!-- SCHEMES -->
+
+            <a href="schemes.html"
+               class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Explore Schemes
+                    </h3>
+
+                    <p>
+                        Browse government welfare schemes.
+                    </p>
+
+                </div>
+
+
+                <i class="bi bi-arrow-up-right help-arrow"></i>
+
+            </a>
+
+
+
+            <!-- LOGIN -->
+
+            <a href="login.html"
+               class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="bi bi-person-circle"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Account
+                    </h3>
+
+                    <p>
+                        Login or create your account.
+                    </p>
+
+                </div>
+
+
+                <i class="bi bi-arrow-up-right help-arrow"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="contact-footer">
+
+
+        <div class="footer-container">
+
+
+            <!-- BRAND -->
+
+            <div>
+
+                <a href="index.html"
+                   class="footer-logo">
+
+                    <span class="footer-logo-icon">
+
+                        <i class="bi bi-cpu-fill"></i>
+
+                    </span>
+
+                    <span>
+                        AI Welfare
+                    </span>
+
+                </a>
+
+
+                <p class="footer-description">
+
+                    Smart Government Welfare
+                    Eligibility Checker designed to
+                    help citizens discover relevant
+                    welfare opportunities.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="schemes.html">
+                    Schemes
+                </a>
+
+                <a href="eligibility.html">
+                    Eligibility
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+
+            <!-- SUPPORT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Support
+                </h3>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+
+                <a href="mailto:mittalhariom2025@gmail.com">
+
+                    <i class="bi bi-envelope"></i>
+
+                    mittalhariom2025@gmail.com
+
+                </a>
+
+
+                <a href="tel:+918630366441">
+
+                    <i class="bi bi-telephone"></i>
+
+                    +91 8630366441
+
+                </a>
+
+
+                <a href="tel:+918707645759">
+
+                    <i class="bi bi-telephone"></i>
+
+                    +91 8707645759
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            © 2026
+            <strong>AI Welfare</strong>.
+            Smart Government Welfare Platform.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/app.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const form =
+                    document.getElementById("contactForm");
+
+
+                if (!form) {
+                    return;
+                }
+
+
+                form.addEventListener(
+                    "submit",
+                    function (event) {
+
+                        event.preventDefault();
+
+
+                        const name =
+                            document
+                                .getElementById("name")
+                                .value
+                                .trim();
+
+                        const email =
+                            document
+                                .getElementById("email")
+                                .value
+                                .trim();
+
+                        const message =
+                            document
+                                .getElementById("message")
+                                .value
+                                .trim();
+
+
+                        if (
+                            name === "" ||
+                            email === "" ||
+                            message === ""
+                        ) {
+
+                            alert(
+                                "Please fill all required fields."
+                            );
+
+                            return;
+
+                        }
+
+
+                        alert(
+                            "Thank you, " +
+                            name +
+                            "! Your message has been submitted successfully."
+                        );
+
+
+                        form.reset();
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

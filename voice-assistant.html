@@ -1,0 +1,395 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const $ = (id) => document.getElementById(id);
+
+  // Speech API support
+  const SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  const micBtn = $("micButton");
+  const floatBtn = $("floatingMicButton");
+  const stopBtn = $("stopButton");
+  const repeatBtn = $("repeatButton");
+  const sendBtn = $("sendButton");
+
+  const statusText = $("statusText");
+  const statusDot = $("statusDot");
+  const transcriptText = $("transcriptText");
+  const langSelect = $("languageSelect");
+  const voiceMessage = $("voiceMessage");
+  const answerText = $("answerText");
+  const questionInput = $("questionInput");
+
+  // Stop safely if required HTML elements are missing
+  if (
+    !statusText ||
+    !transcriptText ||
+    !answerText ||
+    !questionInput ||
+    !langSelect
+  ) {
+    console.error(
+      "Voice assistant initialization failed: required HTML elements are missing."
+    );
+    return;
+  }
+
+  // Normalize language codes where appropriate
+  const LANG_FIX = {
+    "ne-IN": "ne-NP",
+    "pa-IN": "pa-Guru-IN",
+    auto: "en-IN"
+  };
+
+  const getLang = () => {
+    return LANG_FIX[langSelect.value] || langSelect.value || "en-IN";
+  };
+
+  let recognition = null;
+  let listening = false;
+
+  // Update the assistant status
+  function setStatus(message, active = false) {
+    statusText.textContent = message;
+
+    if (statusDot) {
+      statusDot.classList.toggle("active", active);
+    }
+
+    if (micBtn) {
+      micBtn.setAttribute("aria-pressed", String(active));
+    }
+  }
+
+  // Basic local FAQ assistant
+  // Replace this function with your backend API when available.
+  function getAssistantResponse(question) {
+    const q = question.toLowerCase().trim();
+
+    if (
+      q.includes("scholarship") ||
+      q.includes("छात्रवृत्ति") ||
+      q.includes("स्कॉलरशिप")
+    ) {
+      return getLang().startsWith("hi")
+        ? "Scholarship dhoondhne ke liye apni state, education level aur family income enter karein. Results ko official scholarship portal par verify karein."
+        : "To explore scholarships, enter your state, education level, and family income. Verify the eligibility requirements on the official scholarship portal.";
+    }
+
+    if (
+      q.includes("farmer") ||
+      q.includes("kisan") ||
+      q.includes("किसान")
+    ) {
+      return getLang().startsWith("hi")
+        ? "Kisan welfare schemes dhoondhne ke liye apni profile aur zaroori details enter karein. Har scheme ki conditions official website par check karein."
+        : "To explore farmer welfare schemes, enter your relevant profile details and check each scheme's conditions on its official website.";
+    }
+
+    if (
+      q.includes("housing") ||
+      q.includes("awas") ||
+      q.includes("आवास")
+    ) {
+      return getLang().startsWith("hi")
+        ? "Housing schemes ke liye state aur scheme-specific details ki zaroorat ho sakti hai. Official guidelines se eligibility verify karein."
+        : "Housing schemes may require your state and scheme-specific details. Check the official guidelines to verify eligibility.";
+    }
+
+    if (
+      q.includes("document") ||
+      q.includes("documents") ||
+      q.includes("दस्तावेज")
+    ) {
+      return getLang().startsWith("hi")
+        ? "Documents scheme ke hisaab se alag ho sakte hain. Income certificate, education documents ya residence proof ki zaroorat ho sakti hai. Exact list official guidelines se verify karein."
+        : "Required documents vary by scheme. Income certificates, education records, or residence proof may be needed. Verify the exact list in the official guidelines.";
+    }
+
+    if (
+      q.includes("eligibility") ||
+      q.includes("eligible") ||
+      q.includes("पात्रता")
+    ) {
+      return getLang().startsWith("hi")
+        ? "Eligibility check karne ke liye apni profile fill karein. System available rules ke basis par potential matches dikhayega. Final eligibility government authority verify karegi."
+        : "Complete your profile to check potential scheme matches. The system uses available eligibility rules, but final eligibility must be verified by the relevant government authority.";
+    }
+
+    if (
+      q.includes("hello") ||
+      q.includes("hi") ||
+      q.includes("नमस्ते") ||
+      q.includes("namaste")
+    ) {
+      return getLang().startsWith("hi")
+        ? "Namaste! Main Smart Government Welfare Eligibility Checker assistant hoon. Aap scholarships, housing schemes aur welfare programmes ke baare mein pooch sakte hain."
+        : "Hello! I am the Smart Government Welfare Eligibility Checker assistant. You can ask about scholarships, housing schemes, and welfare programmes.";
+    }
+
+    if (
+      q.includes("official") ||
+      q.includes("apply") ||
+      q.includes("आवेदन")
+    ) {
+      return getLang().startsWith("hi")
+        ? "Application karne se pehle scheme ki official website, eligibility conditions, required documents aur deadlines verify karein."
+        : "Before applying, verify the scheme's official website, eligibility conditions, required documents, and deadlines.";
+    }
+
+    return getLang().startsWith("hi")
+      ? "Main scholarships, farmer schemes, housing aur eligibility ke baare mein basic guidance de sakta hoon. Apna question thoda aur clearly poochhein ya scheme ka naam batayein."
+      : "I can provide basic guidance about scholarships, farmer schemes, housing, and eligibility. Please rephrase your question or mention the scheme name.";
+  }
+
+  // Display the response and optionally speak it
+  function handleQuestion(question, shouldSpeak = true) {
+    const q = String(question || "").trim();
+
+    if (!q) {
+      setStatus("Please enter or speak a question.");
+      questionInput.focus();
+      return;
+    }
+
+    transcriptText.textContent = q;
+
+    const reply = getAssistantResponse(q);
+
+    answerText.textContent = reply;
+
+    if (voiceMessage) {
+      voiceMessage.textContent = reply;
+    }
+
+    // Keep the input available for further questions
+    questionInput.value = q;
+
+    if (shouldSpeak) {
+      speak(reply);
+    }
+
+    setStatus("Answer ready.");
+  }
+
+  // Text-to-speech
+  function speak(text) {
+    if (!("speechSynthesis" in window)) {
+      setStatus("Voice output is not supported. Read the answer on screen.");
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    utterance.lang = getLang();
+
+    const voices = window.speechSynthesis.getVoices();
+
+    const matchingVoice = voices.find(
+      (voice) =>
+        voice.lang.toLowerCase() === utterance.lang.toLowerCase()
+    );
+
+    if (matchingVoice) {
+      utterance.voice = matchingVoice;
+    }
+
+    utterance.onerror = () => {
+      setStatus("Voice output failed. Please read the answer on screen.");
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  // Start voice recognition
+  function startListening() {
+    if (!SpeechRecognition) {
+      setStatus(
+        "Voice input is unavailable. Please type your question instead."
+      );
+      questionInput.focus();
+      return;
+    }
+
+    if (listening) {
+      stopListening();
+      return;
+    }
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+
+    try {
+      recognition = new SpeechRecognition();
+
+      recognition.lang = getLang();
+      recognition.interimResults = true;
+      recognition.continuous = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = () => {
+        listening = true;
+        setStatus("Listening... Speak your question.", true);
+      };
+
+      recognition.onresult = (event) => {
+        let transcript = "";
+        let finalTranscript = "";
+
+        for (let i = 0; i < event.results.length; i++) {
+          const result = event.results[i];
+
+          transcript += result[0].transcript;
+
+          if (result.isFinal) {
+            finalTranscript += result[0].transcript;
+          }
+        }
+
+        transcriptText.textContent = transcript;
+
+        // Process only final results
+        if (finalTranscript.trim()) {
+          handleQuestion(finalTranscript, true);
+        }
+      };
+
+      recognition.onerror = (event) => {
+        const messages = {
+          "not-allowed": "Microphone permission denied.",
+          "service-not-allowed": "Speech recognition permission is blocked.",
+          "no-speech": "No speech detected. Please try again.",
+          "language-not-supported":
+            "This language is not supported for voice input.",
+          network:
+            "Speech recognition network error. Check your internet connection.",
+          "audio-capture": "No microphone was detected."
+        };
+
+        setStatus(
+          messages[event.error] ||
+            `Voice recognition error: ${event.error}`
+        );
+      };
+
+      recognition.onend = () => {
+        listening = false;
+
+        if (statusDot) {
+          statusDot.classList.remove("active");
+        }
+
+        if (micBtn) {
+          micBtn.setAttribute("aria-pressed", "false");
+        }
+
+        recognition = null;
+      };
+
+      recognition.start();
+    } catch (error) {
+      listening = false;
+      setStatus("Unable to start voice recognition. Please try again.");
+      console.error("Speech recognition error:", error);
+    }
+  }
+
+  // Stop voice recognition and speech output
+  function stopListening() {
+    if (recognition && listening) {
+      recognition.stop();
+    }
+
+    listening = false;
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+
+    setStatus("Voice assistant stopped.");
+  }
+
+  // Button events
+  if (micBtn) {
+    micBtn.addEventListener("click", startListening);
+  }
+
+  if (floatBtn) {
+    floatBtn.addEventListener("click", () => {
+      if (micBtn) {
+        micBtn.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+
+      startListening();
+    });
+  }
+
+  if (stopBtn) {
+    stopBtn.addEventListener("click", stopListening);
+  }
+
+  if (repeatBtn) {
+    repeatBtn.addEventListener("click", () => {
+      const message = voiceMessage
+        ? voiceMessage.textContent.trim()
+        : "";
+
+      if (message) {
+        speak(message);
+      } else {
+        setStatus("There is no answer to repeat.");
+      }
+    });
+  }
+
+  if (sendBtn) {
+    sendBtn.addEventListener("click", () => {
+      handleQuestion(questionInput.value, true);
+    });
+  }
+
+  // Enter key sends the typed question
+  questionInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleQuestion(questionInput.value, true);
+    }
+  });
+
+  // Quick question buttons
+  document.querySelectorAll(".quick-question").forEach((button) => {
+    button.addEventListener("click", () => {
+      const question = button.dataset.question || button.textContent;
+
+      handleQuestion(question, true);
+    });
+  });
+
+  // Refresh the interface language when selection changes
+  langSelect.addEventListener("change", () => {
+    if (listening && recognition) {
+      stopListening();
+    }
+
+    setStatus("Language selected. You can ask your question.");
+  });
+
+  // Load voices when available
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.onvoiceschanged = () => {
+      window.speechSynthesis.getVoices();
+    };
+  }
+
+  // Initial status
+  setStatus(
+    SpeechRecognition
+      ? "Ready. Type a question or press the microphone."
+      : "Voice input unavailable. You can still type your question."
+  );
+});

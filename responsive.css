@@ -1,0 +1,799 @@
+/* =========================================================
+   AI WELFARE - RESPONSIVE CSS
+   Global Responsive Design
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESPONSIVE RULES
+========================================================= */
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe,
+video {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: 100%;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .container {
+        max-width: 1140px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .container {
+        max-width: 960px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-image {
+        max-width: 420px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* -----------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------- */
+
+    .navbar {
+        padding: 14px 0;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .navbar-collapse {
+        margin-top: 15px;
+
+        padding: 15px;
+
+        background: rgba(15, 23, 42, 0.98);
+
+        border-radius: 14px;
+    }
+
+    .navbar-nav {
+        align-items: stretch !important;
+    }
+
+    .nav-link {
+        margin: 5px 0 !important;
+
+        padding: 10px 12px !important;
+
+        border-radius: 8px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .login-btn {
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        margin-top: 10px;
+
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        min-height: auto;
+
+        padding: 100px 0 80px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 800px;
+
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .hero p {
+        font-size: 17px;
+
+        max-width: 700px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .hero-list {
+        display: inline-block;
+
+        text-align: left;
+    }
+
+    .hero-image {
+        max-width: 360px;
+
+        margin-top: 45px;
+    }
+
+    .hero-buttons {
+        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        margin-right: 0;
+
+        padding: 13px 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURES
+    ----------------------------------------------------- */
+
+    .features {
+        padding: 80px 0;
+    }
+
+    .section-title {
+        margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+        font-size: 36px;
+    }
+
+    .section-title p {
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       GENERAL CARDS
+    ----------------------------------------------------- */
+
+    .feature-card {
+        padding: 30px 22px;
+    }
+
+
+    /* -----------------------------------------------------
+       DASHBOARD
+    ----------------------------------------------------- */
+
+    .dashboard-sidebar {
+        left: -270px;
+    }
+
+    .dashboard-sidebar.open {
+        left: 0;
+    }
+
+    .dashboard-main {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+    .dashboard-mobile-toggle {
+        display: flex;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET SMALL
+========================================================= */
+
+@media (max-width: 767px) {
+
+    /* -----------------------------------------------------
+       GENERAL
+    ----------------------------------------------------- */
+
+    .container {
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------- */
+
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar-brand {
+        font-size: 22px;
+    }
+
+    .navbar-brand i {
+        font-size: 21px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        padding: 95px 0 65px;
+    }
+
+    .hero-badge {
+        font-size: 9px;
+
+        padding: 7px 14px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+
+        line-height: 1.25;
+    }
+
+    .hero p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .hero-list li {
+        font-size: 13px;
+
+        margin: 9px 0;
+    }
+
+    .hero-image {
+        max-width: 300px;
+
+        margin-top: 35px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        max-width: 360px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+
+        margin: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURES
+    ----------------------------------------------------- */
+
+    .features {
+        padding: 65px 0;
+    }
+
+    .section-title {
+        margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .section-title p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .feature-card {
+        padding: 30px 22px;
+
+        border-radius: 16px;
+    }
+
+    .feature-card .icon {
+        width: 70px;
+
+        height: 70px;
+
+        font-size: 28px;
+    }
+
+
+    /* -----------------------------------------------------
+       BUTTONS
+    ----------------------------------------------------- */
+
+    .btn-lg {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    footer {
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    /* -----------------------------------------------------
+       GLOBAL
+    ----------------------------------------------------- */
+
+    body {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------- */
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .navbar-toggler {
+        padding: 6px 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        padding: 90px 0 55px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 13px;
+
+        margin-top: 18px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-list {
+        width: 100%;
+
+        text-align: left;
+
+        margin-bottom: 5px;
+    }
+
+    .hero-list li {
+        font-size: 11px;
+
+        margin: 8px 0;
+    }
+
+    .hero-buttons {
+        margin-top: 25px;
+
+        max-width: 100%;
+    }
+
+    .hero-buttons .btn {
+        padding: 12px 18px;
+
+        font-size: 12px;
+    }
+
+    .hero-image {
+        max-width: 260px;
+
+        margin-top: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTION TITLE
+    ----------------------------------------------------- */
+
+    .section-title h2 {
+        font-size: 27px;
+    }
+
+    .section-title p {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURES
+    ----------------------------------------------------- */
+
+    .features {
+        padding: 55px 0;
+    }
+
+    .feature-card {
+        padding: 25px 20px;
+    }
+
+    .feature-card h4 {
+        font-size: 17px;
+    }
+
+    .feature-card p {
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------------------
+       CTA
+    ----------------------------------------------------- */
+
+    .cta-buttons,
+    .about-hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .cta-buttons .btn,
+    .about-hero-buttons .btn {
+        width: 100%;
+
+        margin: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       TABLE
+    ----------------------------------------------------- */
+
+    table {
+        min-width: 650px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    /* -----------------------------------------------------
+       FORMS
+    ----------------------------------------------------- */
+
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGES
+    ----------------------------------------------------- */
+
+    img {
+        max-width: 100%;
+
+        height: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       DASHBOARD
+    ----------------------------------------------------- */
+
+    .dashboard-topbar {
+        height: 65px;
+
+        padding: 0 14px;
+    }
+
+    .dashboard-content {
+        padding: 14px;
+    }
+
+    .dashboard-welcome {
+        padding: 20px;
+
+        border-radius: 15px;
+    }
+
+    .dashboard-welcome h2 {
+        font-size: 20px;
+    }
+
+    .dashboard-stat-card {
+        padding: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding-left: 14px;
+
+        padding-right: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .hero-badge {
+        font-size: 8px;
+
+        padding: 6px 12px;
+    }
+
+    .hero-image {
+        max-width: 230px;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTION
+    ----------------------------------------------------- */
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    .section-title p {
+        font-size: 11px;
+    }
+
+
+    /* -----------------------------------------------------
+       CARD
+    ----------------------------------------------------- */
+
+    .feature-card {
+        padding: 22px 17px;
+    }
+
+    .feature-card .icon {
+        width: 62px;
+
+        height: 62px;
+
+        font-size: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       BUTTON
+    ----------------------------------------------------- */
+
+    .btn {
+        white-space: normal;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    footer {
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .hero {
+        padding-top: 85px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 11px;
+    }
+
+    .hero-list li {
+        font-size: 10px;
+    }
+
+    .hero-image {
+        max-width: 200px;
+    }
+
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+    .feature-card h4 {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 90px;
+
+        padding-bottom: 50px;
+    }
+
+    .hero-image {
+        max-width: 220px;
+
+        margin-top: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    .navbar,
+    .dashboard-sidebar,
+    .dashboard-topbar,
+    .dashboard-mobile-toggle,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        background: #ffffff !important;
+    }
+
+    .dashboard-main {
+        width: 100% !important;
+
+        margin: 0 !important;
+    }
+
+}

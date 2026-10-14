@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AI Welfare | Admin Dashboard</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css">
+
+</head>
+
+
+<body>
+
+    <div class="admin-container">
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <div class="admin-brand">
+
+                <div class="admin-logo">
+                    <i class="bi bi-cpu-fill"></i>
+                </div>
+
+                <div>
+                    <h1>AI Welfare</h1>
+                    <span>Admin Dashboard</span>
+                </div>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="back-home">
+
+                <i class="bi bi-house-fill"></i>
+
+                Home
+
+            </a>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <main class="dashboard">
+
+            <div class="dashboard-title">
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+                <h2>
+                    Dashboard Overview
+                </h2>
+
+                <p>
+                    Monitor users, schemes, voice queries
+                    and applications.
+                </p>
+
+            </div>
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+
+                <!-- USERS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Users
+                        </span>
+
+                        <strong id="totalUsers">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCHEMES -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-grid-fill"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Schemes
+                        </span>
+
+                        <strong id="totalSchemes">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VOICE -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-mic-fill"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Voice Queries
+                        </span>
+
+                        <strong id="voiceQueries">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- APPLICATIONS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-file-earmark-check-fill"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Applications
+                        </span>
+
+                        <strong id="applications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <section class="admin-section">
+
+                <h3>
+                    Quick Actions
+                </h3>
+
+
+                <div class="admin-actions">
+
+                    <button
+                        type="button"
+                        id="addSchemeButton">
+
+                        <i class="bi bi-plus-circle-fill"></i>
+
+                        Add Scheme
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="manageSchemesButton">
+
+                        <i class="bi bi-grid-fill"></i>
+
+                        Manage Schemes
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="viewUsersButton">
+
+                        <i class="bi bi-people-fill"></i>
+
+                        View Users
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECENT ACTIVITY -->
+
+            <section class="admin-section">
+
+                <h3>
+                    Recent Activity
+                </h3>
+
+                <div
+                    id="recentActivity"
+                    class="activity-list">
+
+                    <div class="activity-item">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Dashboard loaded successfully.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>
